@@ -24,3 +24,23 @@ All four phase transcripts ended PASS. Valid file before/after failed save: SHA-
 The automated driver recorded a null scene focus owner during this run. It did not establish physical keyboard/focus behavior, Tab traversal or personal manual participation. A screenshot can show rendered text but does not certify all resolutions/platforms. Windows/native Linux were not tested here.
 
 GitHub currently shows zero alpha-bug reports authored by XieKaiwen. The duplicate-feedback and narrow-window recovery-text observations overlap existing reports; no redundant reports were filed. This evidence does not satisfy the five genuine personal-report requirement. Spencer must review the evidence and the remaining criteria/shortfall. #139 stays open; #135 is not unblocked by this supplemental report.
+
+
+## Broadened assistant-operated exploration — 28 October
+
+Following the user's instruction to test it ourselves, ran another clean-folder published-v1.4 exploration plus a real second-JVM restart. Same artifact/checksum and plain JDK; no production classes were rebuilt or patched. See `explore-transcript.txt`, `explore-restart-transcript.txt` and screenshots 11–14. This remains assistant-operated Java-agent UI testing.
+
+Executed 65 commands across the two launches, including 35 invalid input cases and 52 byte-preservation assertions:
+
+- Missing/empty/101-character/slash-containing names; malformed, wrong-domain, double-dot, bad-edge and 65-character-local-part emails.
+- Telegram below 5/above 32 characters, bad leading digit, repeated @ and empty supplied value; GitHub above 39 characters, bad edges, consecutive hyphens, leading @, underscore and empty value.
+- Repeated/unknown prefixes and unexpected preamble; missing/invalid/extra-argument view/delete requests.
+- Valid 32-character Telegram and 39-character GitHub, both explicit contact clears, and literal `@clear`/`Clear` values.
+- Case-only canonical-email no-op without save; duplicate identity editing rejected atomically without applying a simultaneously supplied name; successful email/name change retires old identity and normalises ordinary spaces.
+- Pending deletion cancelled by unknown, blank, view and find commands; each following confirmation rejected. Mismatched confirmation also consumed the pending action without deletion.
+- Valid 64-character email local part, 5-character Telegram and 1-character GitHub.
+- Second-JVM restart retained the new identity, literal contacts and unaffected second profile; old identity absent.
+
+Every scripted expectation passed. No new non-duplicate defect emerged. Existing observations (duplicate feedback, read-only-message layout, command argument handling) were not split into redundant reports. Five genuine new reports are not claimed.
+
+An additional uninstrumented `java -jar` launch was attempted for direct desktop input. The native computer-control API could not bind to Java by process name or executable path; no keyboard or mouse actions reached that window and no direct-keyboard pass is claimed. The unused disposable launch was stopped. The automated phases above did execute the real production window and storage.

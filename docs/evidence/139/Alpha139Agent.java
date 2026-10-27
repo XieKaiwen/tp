@@ -86,6 +86,83 @@ public class Alpha139Agent {
             submit("delete e9390001@u.nus.edu");
             submit("confirm-delete e9390001@u.nus.edu"); expect("Deleted student:");
             submit("view e9390002@u.nus.edu"); shot("06-survivor");
+        } else if(phase.equals("explore")) {
+            if(Files.exists(roster)) throw new AssertionError("exploration refuses an existing roster");
+            submit("student add /name Boundary Alpha /email E9380001@U.NUS.EDU"); expect("Added student:");
+            byte[] saved=Files.readAllBytes(roster);
+            String[] invalid = {
+                "student add /name /email e9380002@u.nus.edu",
+                "student add /name "+"n".repeat(101)+" /email e9380002@u.nus.edu",
+                "student add /name A/B /email e9380002@u.nus.edu",
+                "student add /name Valid /email "+"a".repeat(65)+"@u.nus.edu",
+                "student add /name Valid /email a..b@u.nus.edu",
+                "student add /name Valid /email -alpha@u.nus.edu",
+                "student add /name Valid /email alpha.@u.nus.edu",
+                "student add /name Valid /email alpha@example.com",
+                "student add /name Valid /email e9380002@u.nus.edu /telegram abcd",
+                "student add /name Valid /email e9380002@u.nus.edu /telegram "+"a".repeat(33),
+                "student add /name Valid /email e9380002@u.nus.edu /telegram 1abcd",
+                "student add /name Valid /email e9380002@u.nus.edu /telegram @@abcde",
+                "student add /name Valid /email e9380002@u.nus.edu /telegram",
+                "student add /name Valid /email e9380002@u.nus.edu /github "+"a".repeat(40),
+                "student add /name Valid /email e9380002@u.nus.edu /github -alpha",
+                "student add /name Valid /email e9380002@u.nus.edu /github alpha-",
+                "student add /name Valid /email e9380002@u.nus.edu /github alpha--beta",
+                "student add /name Valid /email e9380002@u.nus.edu /github @alpha",
+                "student add /name Valid /email e9380002@u.nus.edu /github alpha_beta",
+                "student add /name Valid /email e9380002@u.nus.edu /github",
+                "student add /name Valid /email e9380002@u.nus.edu /email e9380003@u.nus.edu",
+                "student add /name Valid /email e9380002@u.nus.edu /unknown value",
+                "student add unexpected /name Valid /email e9380002@u.nus.edu",
+                "edit /email e9380001@u.nus.edu /github alpha--beta",
+                "edit /email e9380001@u.nus.edu /telegram abcd",
+                "edit /email e9380001@u.nus.edu /new-email bad /name Changed",
+                "edit /email e9380001@u.nus.edu /name A/B /github changed",
+                "edit /email e9380001@u.nus.edu /name",
+                "edit /email e9380001@u.nus.edu",
+                "view", "view bad", "view e9380001@u.nus.edu extra",
+                "delete", "delete bad", "delete e9380001@u.nus.edu extra"
+            };
+            for(String cmd:invalid) {
+                submit(cmd);
+                if(!field().getStyleClass().contains("error")) throw new AssertionError("invalid command accepted: "+cmd);
+                unchanged(saved);
+            }
+            shot("11-boundary-errors");
+            submit("edit /email e9380001@u.nus.edu /telegram "+"a".repeat(32)+" /github "+"g".repeat(39)); expect("Updated student:");
+            submit("edit /email e9380001@u.nus.edu /telegram clear /github clear"); expect("Updated student:");
+            String json=Files.readString(roster);
+            if(json.contains("a".repeat(32))||json.contains("g".repeat(39))) throw new AssertionError("contacts not cleared");
+            submit("edit /email e9380001@u.nus.edu /telegram @clear /github Clear"); expect("Updated student:");
+            json=Files.readString(roster);
+            if(!json.contains("clear")||!json.contains("Clear")) throw new AssertionError("literal clear lost");
+            saved=Files.readAllBytes(roster);
+            submit("edit /email E9380001@U.NUS.EDU /new-email E9380001@U.NUS.EDU"); expect("No values changed."); unchanged(saved);
+            submit("student add /name Boundary Beta /email e9380002@u.nus.edu"); expect("Added student:");
+            saved=Files.readAllBytes(roster);
+            submit("edit /email e9380001@u.nus.edu /new-email E9380002@U.NUS.EDU /name Changed"); expect("already exists"); unchanged(saved);
+            submit("edit /email e9380001@u.nus.edu /new-email e9380011@u.nus.edu /name   Boundary   Renamed"); expect("Updated student: Boundary Renamed.");
+            saved=Files.readAllBytes(roster);
+            submit("view e9380001@u.nus.edu"); expect("No student found"); unchanged(saved);
+            submit("view e9380011@u.nus.edu"); expect("Viewing student: Boundary Renamed.");
+            String[] cancel = {"unknowncommand", "", "view e9380002@u.nus.edu", "find Boundary"};
+            for(String cmd:cancel) {
+                submit("delete e9380011@u.nus.edu"); unchanged(saved);
+                submit(cmd); expect("Pending deletion cancelled."); unchanged(saved);
+                submit("confirm-delete e9380011@u.nus.edu"); expect("There is no pending deletion"); unchanged(saved);
+            }
+            submit("delete e9380011@u.nus.edu");
+            submit("confirm-delete e9380002@u.nus.edu"); expect("Deletion was cancelled"); unchanged(saved);
+            submit("confirm-delete e9380011@u.nus.edu"); expect("There is no pending deletion"); unchanged(saved);
+            submit("find Boundary"); shot("12-explored-profiles");
+            submit("student add /name One /email "+"a".repeat(64)+"@u.nus.edu /telegram abcde /github a"); expect("Added student: One.");
+            submit("view e9380011@u.nus.edu"); shot("13-literal-clear-profile");
+        } else if(phase.equals("explore-restart")) {
+            submit("view e9380011@u.nus.edu"); expect("Viewing student: Boundary Renamed.");
+            String json=Files.readString(roster);
+            if(json.contains("e9380001@u.nus.edu") || !json.contains("e9380011@u.nus.edu") || !json.contains("Clear")) throw new AssertionError("identity/contact reload wrong");
+            submit("view e9380002@u.nus.edu"); expect("Viewing student: Boundary Beta.");
+            shot("14-exploration-restart");
         } else if(phase.equals("restart")) {
             String json=Files.readString(roster);
             if(!json.contains("e9390002@u.nus.edu") || json.contains("e9390001@u.nus.edu")) throw new AssertionError("restart data wrong");

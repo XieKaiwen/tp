@@ -1,0 +1,283 @@
+METHOD Java agent UI automation; not personal/manual keyboard evidence
+OS Mac OS X 26.5.1 aarch64
+JAVA 25.0.4.1+1-LTS-5
+SCREEN bounds=Rectangle2D [minX = 0.0, minY=0.0, maxX=1512.0, maxY=982.0, width=1512.0, height=982.0] visual=Rectangle2D [minX = 0.0, minY=33.0, maxX=1512.0, maxY=982.0, width=1512.0, height=949.0] outputScale=2.0,2.0
+SCREEN bounds=Rectangle2D [minX = 1512.0, minY=0.0, maxX=3432.0, maxY=1080.0, width=1920.0, height=1080.0] visual=Rectangle2D [minX = 1512.0, minY=30.0, maxX=3432.0, maxY=1080.0, width=1920.0, height=1050.0] outputScale=2.0,2.0
+COMMAND student add /name Boundary Alpha /email E9380001@U.NUS.EDU
+ACTUAL Added student: Boundary Alpha.
+FOCUS null
+COMMAND student add /name /email e9380002@u.nus.edu
+ACTUAL A value is required for /name.
+Usage: student add /name NAME /email EMAIL [/telegram HANDLE] [/github USERNAME]
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn /email e9380002@u.nus.edu
+ACTUAL Name must contain 1 to 100 characters and must not contain a forward slash or control character.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name A/B /email e9380002@u.nus.edu
+ACTUAL Name must contain 1 to 100 characters and must not contain a forward slash or control character.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@u.nus.edu
+ACTUAL Email must use a valid local part followed by @u.nus.edu. Use letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email a..b@u.nus.edu
+ACTUAL Email must use a valid local part followed by @u.nus.edu. Use letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email -alpha@u.nus.edu
+ACTUAL Email must use a valid local part followed by @u.nus.edu. Use letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email alpha.@u.nus.edu
+ACTUAL Email must use a valid local part followed by @u.nus.edu. Use letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email alpha@example.com
+ACTUAL Email must use a valid local part followed by @u.nus.edu. Use letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /telegram abcd
+ACTUAL Telegram handle must contain 5 to 32 letters, digits, or underscores and must start with a letter. One leading @ is allowed.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /telegram aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ACTUAL Telegram handle must contain 5 to 32 letters, digits, or underscores and must start with a letter. One leading @ is allowed.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /telegram 1abcd
+ACTUAL Telegram handle must contain 5 to 32 letters, digits, or underscores and must start with a letter. One leading @ is allowed.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /telegram @@abcde
+ACTUAL Telegram handle must contain 5 to 32 letters, digits, or underscores and must start with a letter. One leading @ is allowed.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /telegram
+ACTUAL A value is required for /telegram.
+Usage: student add /name NAME /email EMAIL [/telegram HANDLE] [/github USERNAME]
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /github aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ACTUAL GitHub username must contain 1 to 39 letters, digits, or hyphens. It must not start or end with a hyphen or contain consecutive hyphens.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /github -alpha
+ACTUAL GitHub username must contain 1 to 39 letters, digits, or hyphens. It must not start or end with a hyphen or contain consecutive hyphens.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /github alpha-
+ACTUAL GitHub username must contain 1 to 39 letters, digits, or hyphens. It must not start or end with a hyphen or contain consecutive hyphens.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /github alpha--beta
+ACTUAL GitHub username must contain 1 to 39 letters, digits, or hyphens. It must not start or end with a hyphen or contain consecutive hyphens.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /github @alpha
+ACTUAL GitHub username must contain 1 to 39 letters, digits, or hyphens. It must not start or end with a hyphen or contain consecutive hyphens.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /github alpha_beta
+ACTUAL GitHub username must contain 1 to 39 letters, digits, or hyphens. It must not start or end with a hyphen or contain consecutive hyphens.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /github
+ACTUAL A value is required for /github.
+Usage: student add /name NAME /email EMAIL [/telegram HANDLE] [/github USERNAME]
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /email e9380003@u.nus.edu
+ACTUAL Parameter /email can be supplied only once.
+Usage: student add /name NAME /email EMAIL [/telegram HANDLE] [/github USERNAME]
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Valid /email e9380002@u.nus.edu /unknown value
+ACTUAL Unknown parameter: /unknown
+Usage: student add /name NAME /email EMAIL [/telegram HANDLE] [/github USERNAME]
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add unexpected /name Valid /email e9380002@u.nus.edu
+ACTUAL Unexpected text before the first parameter.
+Usage: student add /name NAME /email EMAIL [/telegram HANDLE] [/github USERNAME]
+FOCUS null
+PASS roster bytes unchanged
+COMMAND edit /email e9380001@u.nus.edu /github alpha--beta
+ACTUAL GitHub username must contain 1 to 39 letters, digits, or hyphens. It must not start or end with a hyphen or contain consecutive hyphens.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND edit /email e9380001@u.nus.edu /telegram abcd
+ACTUAL Telegram handle must contain 5 to 32 letters, digits, or underscores and must start with a letter. One leading @ is allowed.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND edit /email e9380001@u.nus.edu /new-email bad /name Changed
+ACTUAL New email: Email must use a valid local part followed by @u.nus.edu. Use letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND edit /email e9380001@u.nus.edu /name A/B /github changed
+ACTUAL Name must contain 1 to 100 characters and must not contain a forward slash or control character.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND edit /email e9380001@u.nus.edu /name
+ACTUAL A value is required for /name.
+Usage: edit /email EMAIL [/new-email NEW_EMAIL] [/name NAME] [/telegram HANDLE|clear] [/github USERNAME|clear]
+FOCUS null
+PASS roster bytes unchanged
+COMMAND edit /email e9380001@u.nus.edu
+ACTUAL Provide at least one field to update.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND view
+ACTUAL NUS email is required. Usage: view EMAIL
+FOCUS null
+PASS roster bytes unchanged
+COMMAND view bad
+ACTUAL Email must use a valid local part followed by @u.nus.edu. Use letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND view e9380001@u.nus.edu extra
+ACTUAL View accepts one NUS email only. Usage: view EMAIL
+FOCUS null
+PASS roster bytes unchanged
+COMMAND delete
+ACTUAL NUS email is required. Usage: delete EMAIL
+FOCUS null
+PASS roster bytes unchanged
+COMMAND delete bad
+ACTUAL Email must use a valid local part followed by @u.nus.edu. Use letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND delete e9380001@u.nus.edu extra
+ACTUAL Delete accepts one NUS email only. Usage: delete EMAIL
+FOCUS null
+PASS roster bytes unchanged
+COMMAND edit /email e9380001@u.nus.edu /telegram aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa /github ggggggggggggggggggggggggggggggggggggggg
+ACTUAL Updated student: Boundary Alpha.
+FOCUS null
+COMMAND edit /email e9380001@u.nus.edu /telegram clear /github clear
+ACTUAL Updated student: Boundary Alpha.
+FOCUS null
+COMMAND edit /email e9380001@u.nus.edu /telegram @clear /github Clear
+ACTUAL Updated student: Boundary Alpha.
+FOCUS null
+COMMAND edit /email E9380001@U.NUS.EDU /new-email E9380001@U.NUS.EDU
+ACTUAL No values changed.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND student add /name Boundary Beta /email e9380002@u.nus.edu
+ACTUAL Added student: Boundary Beta.
+FOCUS null
+COMMAND edit /email e9380001@u.nus.edu /new-email E9380002@U.NUS.EDU /name Changed
+ACTUAL A student with the new NUS email already exists.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND edit /email e9380001@u.nus.edu /new-email e9380011@u.nus.edu /name   Boundary   Renamed
+ACTUAL Updated student: Boundary Renamed.
+FOCUS null
+COMMAND view e9380001@u.nus.edu
+ACTUAL No student found with NUS email: e9380001@u.nus.edu.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND view e9380011@u.nus.edu
+ACTUAL Viewing student: Boundary Renamed.
+FOCUS null
+COMMAND delete e9380011@u.nus.edu
+ACTUAL Delete this student?
+Boundary Renamed
+NUS email: e9380011@u.nus.edu
+Enrolments to remove: 0
+Type: confirm-delete e9380011@u.nus.edu
+Any other command will cancel this deletion.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND unknowncommand
+ACTUAL Pending deletion cancelled.
+Unknown command. Check the command name and use lowercase command words.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND confirm-delete e9380011@u.nus.edu
+ACTUAL There is no pending deletion. Use delete EMAIL first.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND delete e9380011@u.nus.edu
+ACTUAL Delete this student?
+Boundary Renamed
+NUS email: e9380011@u.nus.edu
+Enrolments to remove: 0
+Type: confirm-delete e9380011@u.nus.edu
+Any other command will cancel this deletion.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND 
+ACTUAL Pending deletion cancelled.
+Enter a command.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND confirm-delete e9380011@u.nus.edu
+ACTUAL There is no pending deletion. Use delete EMAIL first.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND delete e9380011@u.nus.edu
+ACTUAL Delete this student?
+Boundary Renamed
+NUS email: e9380011@u.nus.edu
+Enrolments to remove: 0
+Type: confirm-delete e9380011@u.nus.edu
+Any other command will cancel this deletion.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND view e9380002@u.nus.edu
+ACTUAL Pending deletion cancelled.
+Viewing student: Boundary Beta.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND confirm-delete e9380011@u.nus.edu
+ACTUAL There is no pending deletion. Use delete EMAIL first.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND delete e9380011@u.nus.edu
+ACTUAL Delete this student?
+Boundary Renamed
+NUS email: e9380011@u.nus.edu
+Enrolments to remove: 0
+Type: confirm-delete e9380011@u.nus.edu
+Any other command will cancel this deletion.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND find Boundary
+ACTUAL Pending deletion cancelled.
+2 students found for "Boundary".
+FOCUS null
+PASS roster bytes unchanged
+COMMAND confirm-delete e9380011@u.nus.edu
+ACTUAL There is no pending deletion. Use delete EMAIL first.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND delete e9380011@u.nus.edu
+ACTUAL Delete this student?
+Boundary Renamed
+NUS email: e9380011@u.nus.edu
+Enrolments to remove: 0
+Type: confirm-delete e9380011@u.nus.edu
+Any other command will cancel this deletion.
+FOCUS null
+COMMAND confirm-delete e9380002@u.nus.edu
+ACTUAL Deletion was cancelled because the confirmation did not match the selected student.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND confirm-delete e9380011@u.nus.edu
+ACTUAL There is no pending deletion. Use delete EMAIL first.
+FOCUS null
+PASS roster bytes unchanged
+COMMAND find Boundary
+ACTUAL 2 students found for "Boundary".
+FOCUS null
+COMMAND student add /name One /email aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@u.nus.edu /telegram abcde /github a
+ACTUAL Added student: One.
+FOCUS null
+COMMAND view e9380011@u.nus.edu
+ACTUAL Viewing student: Boundary Renamed.
+FOCUS null
+PASS phase explore
