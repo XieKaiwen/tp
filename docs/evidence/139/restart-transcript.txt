@@ -1,0 +1,9 @@
+METHOD Java agent UI automation; not personal/manual keyboard evidence
+OS Mac OS X 26.5.1 aarch64
+JAVA 25.0.4.1+1-LTS-5
+SCREEN bounds=Rectangle2D [minX = 0.0, minY=0.0, maxX=1512.0, maxY=982.0, width=1512.0, height=982.0] visual=Rectangle2D [minX = 0.0, minY=33.0, maxX=1512.0, maxY=982.0, width=1512.0, height=949.0] outputScale=2.0,2.0
+SCREEN bounds=Rectangle2D [minX = 1512.0, minY=0.0, maxX=3432.0, maxY=1080.0, width=1920.0, height=1080.0] visual=Rectangle2D [minX = 1512.0, minY=30.0, maxX=3432.0, maxY=1080.0, width=1920.0, height=1050.0] outputScale=2.0,2.0
+COMMAND view e9390002@u.nus.edu
+ACTUAL Viewing student: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.
+FOCUS null
+PASS phase restart
