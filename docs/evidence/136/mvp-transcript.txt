@@ -1,0 +1,216 @@
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/roster.json
+RESULT No students in the roster. Add a student or load fictional samples.
+COMMAND [sample load]
+RESULT Loaded 5 fictional student profiles and 5 enrolments. You can explore SoCdex without using real student data.
+COMMAND [find Alex Tan]
+RESULT 2 students found for "Alex Tan".
+COMMAND [find @socdex_demo_mei]
+RESULT 1 student found for "@socdex_demo_mei".
+COMMAND [view E9000001@U.NUS.EDU]
+RESULT Viewing student: Alex Tan.
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/roster.json
+RESULT 
+COMMAND [student add /name Priya Raman /email e9100001@u.nus.edu /github priya-raman-demo]
+RESULT Added student: Priya Raman.
+COMMAND [enrol /email e9100001@u.nus.edu /module CS2103T /semester AY26/27 S1 /section T12 /team SEED]
+RESULT Added enrolment for Priya Raman: CS2103T, AY26/27 S1. / Module: CS2103T / Semester: AY26/27 S1 / Section: T12 / Team: SEED
+COMMAND [enrol /email e9100001@u.nus.edu /module CS2101 /semester AY26/27 S2]
+RESULT Added enrolment for Priya Raman: CS2101, AY26/27 S2. / Module: CS2101 / Semester: AY26/27 S2 / Section: Not assigned / Team: Not assigned
+COMMAND [edit /email e9100001@u.nus.edu /telegram @priya_raman_demo]
+RESULT Updated student: Priya Raman.
+COMMAND [find Priya Raman]
+RESULT 1 student found for "Priya Raman".
+COMMAND [find E9100001@U.NUS.EDU]
+RESULT 1 student found for "E9100001@U.NUS.EDU".
+COMMAND [find @priya_raman_demo]
+RESULT 1 student found for "@priya_raman_demo".
+COMMAND [find priya-raman-demo]
+RESULT 1 student found for "priya-raman-demo".
+COMMAND [bye]
+RESULT Exiting SoCdex as requested ...
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/roster.json
+RESULT 
+COMMAND [view e9100001@u.nus.edu]
+RESULT Viewing student: Priya Raman.
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/roster.json
+RESULT 
+COMMAND [delete e9000003@u.nus.edu]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [find Alex]
+RESULT Pending deletion cancelled. / 2 students found for "Alex".
+COMMAND [delete e9000003@u.nus.edu]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+COMMAND []
+RESULT Pending deletion cancelled. / Enter a command.
+COMMAND [delete e9000003@u.nus.edu]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [unknowncommand]
+RESULT Pending deletion cancelled. / Unknown command. Check the command name and use lowercase command words.
+COMMAND [delete e9000003@u.nus.edu]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [confirm-delete]
+RESULT Pending deletion cancelled. / NUS email is required. Usage: confirm-delete EMAIL
+COMMAND [delete e9000003@u.nus.edu]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [confirm-delete e9000004@u.nus.edu]
+RESULT Deletion was cancelled because the confirmation did not match the selected student.
+COMMAND [delete e9000003@u.nus.edu]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [delete e9000004@u.nus.edu]
+RESULT Pending deletion cancelled. / Delete this student? / Ravi Kumar / NUS email: e9000004@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000004@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [confirm-delete e9000003@u.nus.edu]
+RESULT Deletion was cancelled because the confirmation did not match the selected student.
+COMMAND [delete e9000003@u.nus.edu]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [confirm-delete e9000003@u.nus.edu]
+RESULT Pending deletion cancelled. / The student list has been refreshed. Check the displayed indexes and submit your command again.
+COMMAND [list]
+RESULT Listed all students.
+COMMAND [delete e9000003@u.nus.edu]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+KEY DOWN on the student list
+RESULT Pending deletion cancelled.
+COMMAND [confirm-delete e9000003@u.nus.edu]
+RESULT There is no pending deletion. Use delete EMAIL first.
+COMMAND [find Mei]
+RESULT 1 student found for "Mei".
+COMMAND [delete E9000003@U.NUS.EDU]
+RESULT Delete this student? / Mei Lim / NUS email: e9000003@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000003@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [confirm-delete e9000003@u.nus.edu]
+RESULT Deleted student: Mei Lim. NUS email: e9000003@u.nus.edu. Enrolments removed: 1.
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/roster.json
+RESULT 
+COMMAND [find Priya]
+RESULT 1 student found for "Priya".
+COMMAND [sample clear]
+RESULT Removed 4 fictional sample profiles and 4 enrolments. Your non-sample records were not changed.
+COMMAND [sample clear]
+RESULT No fictional sample profiles were found.
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/roster.json
+RESULT 
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/roster.json
+RESULT 
+COMMAND [find nobody]
+RESULT No students found for "nobody". Check the spelling or search with another identifier.
+COMMAND [student add /name Priya Raman Again /email E9100001@U.NUS.EDU]
+RESULT A student with this NUS email already exists. Use view e9100001@u.nus.edu to inspect the existing profile.
+COMMAND [enrol /email e9100001@u.nus.edu /module CS2103T /semester AY26/27 S1 /section T01]
+RESULT This student already has an enrolment for CS2103T, AY26/27 S1. Use edit-enrol to change its section or team.
+COMMAND [edit /email e9100001@u.nus.edu /telegram priya_raman_demo]
+RESULT No values changed.
+COMMAND [sample load]
+RESULT Sample data can only be loaded into an empty roster. Existing data was not changed.
+COMMAND [student add /name Bad Email /email bad@example.com]
+RESULT Email must use a valid local part followed by @u.nus.edu. Use 1 to 64 letters, digits, dots, underscores, plus signs, or hyphens in the local part, with no spaces or consecutive dots. Start and end the local part with a letter or digit.
+COMMAND [clear]
+RESULT The clear command is unavailable because it would remove the entire roster. Use delete EMAIL to remove one student profile or sample clear to remove fictional sample profiles.
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/roster.json
+RESULT 
+PASTE [find<TAB>Priya]
+RESULT 1 student found for "Priya".
+COMMAND [delete e9100001@u.nus.edu]
+RESULT Delete this student? / Priya Raman / NUS email: e9100001@u.nus.edu / Enrolments to remove: 2 / Type: confirm-delete e9100001@u.nus.edu / Any other command will cancel this deletion.
+PASTE [find Priya<LF>view e9100001@u.nus.edu]
+RESULT Pending deletion cancelled. / Enter one command on a single line.
+COMMAND [delete e9100001@u.nus.edu]
+RESULT Delete this student? / Priya Raman / NUS email: e9100001@u.nus.edu / Enrolments to remove: 2 / Type: confirm-delete e9100001@u.nus.edu / Any other command will cancel this deletion.
+PASTE [find Priya<CR><LF>view e9100001@u.nus.edu]
+RESULT Pending deletion cancelled. / Enter one command on a single line.
+COMMAND [delete e9100001@u.nus.edu]
+RESULT Delete this student? / Priya Raman / NUS email: e9100001@u.nus.edu / Enrolments to remove: 2 / Type: confirm-delete e9100001@u.nus.edu / Any other command will cancel this deletion.
+PASTE [find Priya<VT>view e9100001@u.nus.edu]
+RESULT Pending deletion cancelled. / Enter one command on a single line.
+PASTE [view e9100001@u.nus.edu]
+RESULT Viewing student: Priya Raman.
+COMMAND [find Priya↵]
+RESULT No students found for "Priya↵". Check the spelling or search with another identifier.
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/failures.json
+RESULT No students in the roster. Add a student or load fictional samples.
+COMMAND [sample load]
+RESULT Loaded 5 fictional student profiles and 5 enrolments. You can explore SoCdex without using real student data.
+COMMAND [find Alex]
+RESULT 2 students found for "Alex".
+COMMAND [view e9000002@u.nus.edu]
+RESULT Viewing student: Alex Tan.
+COMMAND [edit /email e9000002@u.nus.edu /github changed-handle]
+RESULT The record could not be updated. No data was changed.
+COMMAND [enrol /email e9000002@u.nus.edu /module CS2101 /semester AY26/27 S1]
+RESULT The enrollment could not be saved. No data was changed.
+COMMAND [student add /name Hidden Student /email e9100002@u.nus.edu]
+RESULT The student could not be saved. No data was changed.
+COMMAND [delete e9000002@u.nus.edu]
+RESULT Delete this student? / Alex Tan / NUS email: e9000002@u.nus.edu / Enrolments to remove: 1 / Type: confirm-delete e9000002@u.nus.edu / Any other command will cancel this deletion.
+COMMAND [confirm-delete e9000002@u.nus.edu]
+RESULT The student could not be deleted. No data was changed. Use delete EMAIL to start again.
+COMMAND [edit /email e9000002@u.nus.edu /github changed-handle]
+RESULT Updated student: Alex Tan.
+COMMAND [find Alex]
+RESULT 2 students found for "Alex".
+COMMAND [view e9000002@u.nus.edu]
+RESULT Viewing student: Alex Tan.
+COMMAND [view e9000003@u.nus.edu]
+RESULT Profile could not be displayed. Try viewing the student again.
+COMMAND [student add /name Hidden Student /email e9100002@u.nus.edu]
+RESULT Student could not be displayed. No data was changed. Try again.
+COMMAND [find Mei]
+RESULT Search results could not be displayed. Try the search again.
+COMMAND [find Mei]
+RESULT 1 student found for "Mei".
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/failed-save-selection.json
+RESULT No students in the roster. Add a student or load fictional samples.
+COMMAND [sample load]
+RESULT Loaded 5 fictional student profiles and 5 enrolments. You can explore SoCdex without using real student data.
+COMMAND [view e9000004@u.nus.edu]
+RESULT Viewing student: Ravi Kumar.
+COMMAND [student add /name Aaron Example /email e9000100@u.nus.edu]
+RESULT The student could not be saved. No data was changed.
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/invalid.json (read-only recovery)
+RESULT Stored data could not be loaded. The existing file was preserved. This session is read-only. Restore a valid data file and restart SoCdex.
+COMMAND [sample load]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [student add /name Test Student /email e9100001@u.nus.edu]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [enrol /email e9100001@u.nus.edu /module CS2103T /semester AY26/27 S1]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [sample clear]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [delete e9100001@u.nus.edu]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [find Alex]
+RESULT No students found for "Alex". Check the spelling or search with another identifier.
+COMMAND [bye]
+RESULT Exiting SoCdex as requested ...
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/invalid.json (read-only recovery)
+RESULT Stored data could not be loaded. The existing file was preserved. This session is read-only. Restore a valid data file and restart SoCdex.
+COMMAND [sample load]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [student add /name Test Student /email e9100001@u.nus.edu]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [enrol /email e9100001@u.nus.edu /module CS2103T /semester AY26/27 S1]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [sample clear]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [delete e9100001@u.nus.edu]
+RESULT Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.
+COMMAND [find Alex]
+RESULT No students found for "Alex". Check the spelling or search with another identifier.
+WINDOW close request
+FOCUS at start: window=false owner=none
+SESSION build/reports/mvp-acceptance/invalid.json
+RESULT 
+COMMAND [view e9100001@u.nus.edu]
+RESULT Viewing student: Priya Raman.
+PASS MVP JavaFX assertions: 332
+Runtime: 25.0.4.1+1-LTS-5; JavaFX 17.0.7+2; Mac OS X 26.5.1 aarch64
