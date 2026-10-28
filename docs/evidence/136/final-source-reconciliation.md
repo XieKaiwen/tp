@@ -1,0 +1,11 @@
+## Post-candidate documentation/source reconciliation — Kaiwen
+
+#186 and #187 are merged using merge commits after Spencer's approval covering each latest head, green Ubuntu/macOS/Windows PR CI, and no unresolved threads. Final source is **`da813f11bb864c9bf3130d47c7403409f95ded4f`**. The complete diff from original candidate source `f6750f7f4d320e491507777e269c59a22be34549` is five added AI-use acknowledgement lines in `docs/DeveloperGuide.md`; no application/build/resource change.
+
+I clean-built final source with `./gradlew clean check coverage shadowJar --no-daemon`: **BUILD SUCCESSFUL; 514 tests, zero failures/errors/skips**, repository checks, Checkstyle and coverage passed. `cmp` confirms the resulting JAR is **byte-identical** to the previously accepted/staged candidate: **12,923,199 bytes**, SHA-256 **`39b0db222e95ccbfc9dc882fb2274dd2b4da93aff13f270d879165576df6bcd6`**. Existing artifact/platform tests continue to identify those exact bytes; no replacement JAR or revised checksum is required. Original packaging evidence remains correctly attributed to f6750f7f; this adds a final-source reproducibility record rather than rewriting that history.
+
+Pages deployment [40650366986](https://github.com/AY2627S1-CS2103T-W09-2/tp/actions/runs/40650366986) succeeded, and I fetched the live Developer Guide and verified both Kaiwen's OpenAI Codex acknowledgement and Yujie's Claude Code acknowledgement. Final-master CI [40650367086](https://github.com/AY2627S1-CS2103T-W09-2/tp/actions/runs/40650367086) is separately tracked; PR CI was green before merge.
+
+Draft target metadata now identifies final source da813f11, with both provenance baselines stated in its notes. **All three staged assets remain unchanged; v1.5 remains a draft.** This is build/source reconciliation, not #142 sign-off or permission to publish. Windows evidence, #142 independent review and #137 retest remain outstanding. Native Linux stays unverified.
+
+#139's individual 0/5 report shortfall remains open with its explicit unmet/pending-course-or-team-decision disposition; no waiver or fabricated reports. Hoang can now consolidate #141 using the merged acknowledgements, published-guide check and personal audit records.
