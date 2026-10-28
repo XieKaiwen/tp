@@ -1,0 +1,76 @@
+{
+  "persons" : [ {
+    "name" : "Zoe Lee",
+    "email" : "e9480001@u.nus.edu",
+    "remark" : "",
+    "tags" : [ ],
+    "github" : null,
+    "enrolments" : [ ],
+    "telegram" : null,
+    "sample" : false
+  }, {
+    "name" : "Émile Ng",
+    "email" : "e9480002@u.nus.edu",
+    "remark" : "",
+    "tags" : [ ],
+    "github" : null,
+    "enrolments" : [ ],
+    "telegram" : null,
+    "sample" : false
+  }, {
+    "name" : "Eve Ong",
+    "email" : "e9480003@u.nus.edu",
+    "remark" : "",
+    "tags" : [ ],
+    "github" : null,
+    "enrolments" : [ ],
+    "telegram" : null,
+    "sample" : false
+  }, {
+    "name" : "Alex Tan",
+    "email" : "e9480004@u.nus.edu",
+    "remark" : "",
+    "tags" : [ ],
+    "github" : null,
+    "enrolments" : [ ],
+    "telegram" : null,
+    "sample" : false
+  }, {
+    "name" : "Alex Tan",
+    "email" : "e9480005@u.nus.edu",
+    "remark" : "",
+    "tags" : [ ],
+    "github" : null,
+    "enrolments" : [ {
+      "module" : "CS2103T",
+      "semester" : "AY26/27 S1",
+      "section" : "T14",
+      "team" : null
+    }, {
+      "module" : "CS2101",
+      "semester" : "AY26/27 S1",
+      "section" : "Not assigned",
+      "team" : null
+    } ],
+    "telegram" : null,
+    "sample" : false
+  }, {
+    "name" : "Émile Ng",
+    "email" : "e9480006@u.nus.edu",
+    "remark" : "",
+    "tags" : [ ],
+    "github" : null,
+    "enrolments" : [ ],
+    "telegram" : null,
+    "sample" : false
+  }, {
+    "name" : "Boundary",
+    "email" : "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@u.nus.edu",
+    "remark" : "",
+    "tags" : [ ],
+    "github" : null,
+    "enrolments" : [ ],
+    "telegram" : null,
+    "sample" : false
+  } ]
+}
