@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/tp/assets/css/style.css">
+<title>User Guide</title>
+
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/tp/">SoCdex</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+<a class="page-link" href="/tp/UserGuide.html">User Guide</a><a class="page-link" href="/tp/DeveloperGuide.html">Developer Guide</a><a class="page-link" href="/tp/AboutUs.html">About Us</a><a class="page-link no-hover" href="https://github.com/AY2627S1-CS2103T-W09-2/tp">
+            <img src="/tp/images/github-icon.png" class="icon" alt="View on GitHub">
+          </a>
+</div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">User Guide</h1>
+  </header>
+
+  <div class="post-content">
+    <p>SoCdex is a desktop roster manager for NUS School of Computing tutors who manage students across multiple class sections and project teams. It keeps student identities and roster information in one local application, so tutors do not need to repeatedly cross-reference Canvas, spreadsheets, technical platforms, and personal notes. SoCdex provides a keyboard-first workflow through typed commands while retaining the benefits of a graphical user interface.</p>
+
+<p>SoCdex is based on AddressBook Level 3 (AB3).</p>
+
+<ul id="markdown-toc">
+  <li><a href="#quick-start" id="markdown-toc-quick-start">Quick start</a></li>
+  <li>
+<a href="#features" id="markdown-toc-features">Features</a>    <ul>
+      <li><a href="#viewing-help-help" id="markdown-toc-viewing-help-help">Viewing help: <code class="language-plaintext highlighter-rouge">help</code></a></li>
+      <li><a href="#loading-fictional-sample-profiles-sample-load" id="markdown-toc-loading-fictional-sample-profiles-sample-load">Loading fictional sample profiles: <code class="language-plaintext highlighter-rouge">sample load</code></a></li>
+      <li><a href="#removing-fictional-sample-profiles-sample-clear" id="markdown-toc-removing-fictional-sample-profiles-sample-clear">Removing fictional sample profiles: <code class="language-plaintext highlighter-rouge">sample clear</code></a></li>
+      <li><a href="#adding-a-student-student-add" id="markdown-toc-adding-a-student-student-add">Adding a student: <code class="language-plaintext highlighter-rouge">student add</code></a></li>
+      <li><a href="#adding-a-module-semester-enrolment-enrol" id="markdown-toc-adding-a-module-semester-enrolment-enrol">Adding a module-semester enrolment: <code class="language-plaintext highlighter-rouge">enrol</code></a></li>
+      <li><a href="#editing-an-enrolments-section-or-team-edit-enrol" id="markdown-toc-editing-an-enrolments-section-or-team-edit-enrol">Editing an enrolment’s section or team: <code class="language-plaintext highlighter-rouge">edit-enrol</code></a></li>
+      <li><a href="#listing-the-complete-roster-list" id="markdown-toc-listing-the-complete-roster-list">Listing the complete roster: <code class="language-plaintext highlighter-rouge">list</code></a></li>
+      <li><a href="#editing-a-students-profile-edit" id="markdown-toc-editing-a-students-profile-edit">Editing a student’s profile: <code class="language-plaintext highlighter-rouge">edit</code></a></li>
+      <li><a href="#finding-students-by-an-identifier-find" id="markdown-toc-finding-students-by-an-identifier-find">Finding students by an identifier: <code class="language-plaintext highlighter-rouge">find</code></a></li>
+      <li><a href="#viewing-a-student-profile-view" id="markdown-toc-viewing-a-student-profile-view">Viewing a student profile: <code class="language-plaintext highlighter-rouge">view</code></a></li>
+      <li><a href="#deleting-a-student-delete-and-confirm-delete" id="markdown-toc-deleting-a-student-delete-and-confirm-delete">Deleting a student: <code class="language-plaintext highlighter-rouge">delete</code> and <code class="language-plaintext highlighter-rouge">confirm-delete</code></a></li>
+      <li><a href="#retired-whole-roster-command-clear" id="markdown-toc-retired-whole-roster-command-clear">Retired whole-roster command: <code class="language-plaintext highlighter-rouge">clear</code></a></li>
+      <li><a href="#exiting-the-program-bye" id="markdown-toc-exiting-the-program-bye">Exiting the program: <code class="language-plaintext highlighter-rouge">bye</code></a></li>
+      <li><a href="#saving-the-data" id="markdown-toc-saving-the-data">Saving the data</a></li>
+      <li><a href="#starting-empty-or-recovering-from-a-load-failure" id="markdown-toc-starting-empty-or-recovering-from-a-load-failure">Starting empty or recovering from a load failure</a></li>
+      <li><a href="#application-folder-and-data-locations" id="markdown-toc-application-folder-and-data-locations">Application folder and data locations</a></li>
+      <li><a href="#stored-enrolments" id="markdown-toc-stored-enrolments">Stored enrolments</a></li>
+      <li><a href="#stored-contacts-and-sample-classification" id="markdown-toc-stored-contacts-and-sample-classification">Stored contacts and sample classification</a></li>
+      <li><a href="#editing-the-data-file" id="markdown-toc-editing-the-data-file">Editing the data file</a></li>
+    </ul>
+  </li>
+  <li><a href="#faq" id="markdown-toc-faq">FAQ</a></li>
+  <li><a href="#known-issues" id="markdown-toc-known-issues">Known issues</a></li>
+  <li><a href="#command-summary" id="markdown-toc-command-summary">Command summary</a></li>
+</ul>
+
+<hr>
+
+<h2 id="quick-start">Quick start</h2>
+
+<ol>
+  <li>
+    <p>Install Java <code class="language-plaintext highlighter-rouge">25</code>. In a terminal, run <code class="language-plaintext highlighter-rouge">java -version</code> and confirm that the reported major version is <code class="language-plaintext highlighter-rouge">25</code> before every launch. Other Java versions are not supported.<br>
+<strong>Mac users:</strong> Use the precise JDK distribution prescribed in the <a href="https://se-education.org/guides/tutorials/javaInstallationMac.html">Java 25 installation guide</a>.</p>
+  </li>
+  <li>
+    <p>Download the latest <code class="language-plaintext highlighter-rouge">.jar</code> file from the <a href="https://github.com/AY2627S1-CS2103T-W09-2/tp/releases">SoCdex releases page</a>.</p>
+  </li>
+  <li>
+    <p>Put the JAR file in an empty folder where SoCdex is allowed to create and replace files. Do not use a write-protected folder. SoCdex creates its roster, preferences, logs, JavaFX cache and temporary files inside this application folder.</p>
+  </li>
+  <li>
+    <p>Open a terminal, <code class="language-plaintext highlighter-rouge">cd</code> to the folder containing the JAR file, and run <code class="language-plaintext highlighter-rouge">java -jar "addressbook.jar"</code>. If the downloaded file has another name, use that exact filename instead.<br>
+Launch SoCdex from the terminal rather than by double-clicking the JAR. This ensures that SoCdex uses the Java 25 installation that you verified. On Linux with a Wayland display server, if launch fails with a <code class="language-plaintext highlighter-rouge">Gdk-CRITICAL</code> error, retry with <code class="language-plaintext highlighter-rouge">GDK_BACKEND=x11 java -jar "addressbook.jar"</code>.<br>
+A GUI should appear in a few seconds. A new installation starts with an empty roster; it does not create sample records automatically. The image below shows the SoCdex interface.<br>
+<img src="/tp/images/Ui.png" alt="Ui"></p>
+  </li>
+  <li>
+    <p>Type a command in the command box and press Enter to execute it. For example, type <strong><code class="language-plaintext highlighter-rouge">help</code></strong> and press Enter to open the help window.<br>
+Some example commands you can try:</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">list</code> : Lists all students.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">student add /name Alex Tan /email e9000001@u.nus.edu</code> : Creates a student profile without requiring optional contacts.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">sample load</code> : Loads five fictional student profiles into an empty roster.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">sample clear</code> : Removes all profiles that are classified as fictional samples.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">delete e9000001@u.nus.edu</code> : Previews the deletion of the student with that NUS email. Nothing is removed yet.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">confirm-delete e9000001@u.nus.edu</code> : Deletes the previewed student, when submitted as the next command.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">clear</code> : Explains that whole-roster clearing is unavailable and points to the safe alternatives.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">bye</code> : Exits the app.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Refer to the <a href="#features">Features</a> section below for details of each command.</p>
+  </li>
+</ol>
+
+<hr>
+
+<h2 id="features">Features</h2>
+
+<div class="alert alert-info">
+
+  <p><strong><img class="emoji" title=":information_source:" alt=":information_source:" src="https://github.githubassets.com/images/icons/emoji/unicode/2139.png" height="20" width="20"> Notes about the command format:</strong><br></p>
+
+  <ul>
+    <li>Words in <code class="language-plaintext highlighter-rouge">UPPER_CASE</code> represent your values. Square brackets mark optional parameters; do not type the brackets.</li>
+    <li>Use lowercase command words and prefixes. Commands must be on one line; spaces and tabs may separate their components.</li>
+    <li>A tab pasted into the command box becomes a space. A pasted line break shows as <code class="language-plaintext highlighter-rouge">↵</code>. Other pasted C0 control characters (U+0000–U+001F) and DEL (U+007F) show as <code class="language-plaintext highlighter-rouge">�</code>. C1 controls (U+0080–U+009F) and the Unicode line and paragraph separators U+2028/U+2029 remain in the field instead of becoming markers. A command containing any of these unsupported controls or separators is rejected with <code class="language-plaintext highlighter-rouge">Enter one command on a single line.</code> Delete the marker or unsupported character (and any extra command after it), then press Enter again. A <code class="language-plaintext highlighter-rouge">↵</code> or <code class="language-plaintext highlighter-rouge">�</code> that you type yourself is ordinary text.</li>
+    <li>For <code class="language-plaintext highlighter-rouge">student add</code> and <code class="language-plaintext highlighter-rouge">edit</code>, prefixes may appear in any order, but only once each. Separate each prefix from its value with a space or tab. Unknown prefixes, repeated prefixes, empty supplied values, malformed slash tokens and text before the first prefix are rejected with usage guidance.</li>
+    <li>
+      <p>A prefix starts at a space/tab boundary with <code class="language-plaintext highlighter-rouge">/</code> and a letter, followed by letters or hyphens. Values end at the next prefix. An embedded slash such as the one in <code class="language-plaintext highlighter-rouge">AY26/27</code> is not a prefix.</p>
+    </li>
+    <li>
+      <p>Commands that take no parameters reject extra text. For example, <code class="language-plaintext highlighter-rouge">help 123</code>, <code class="language-plaintext highlighter-rouge">list all</code>, and <code class="language-plaintext highlighter-rouge">bye now</code> are
+rejected with command-specific usage guidance. Surrounding spaces and tabs remain allowed.</p>
+    </li>
+    <li>
+      <p>Pressing Enter when the command box is empty, or contains only spaces or tabs, shows <code class="language-plaintext highlighter-rouge">Enter a command.</code></p>
+    </li>
+    <li>If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.</li>
+  </ul>
+</div>
+
+<h3 id="viewing-help-help">Viewing help: <code class="language-plaintext highlighter-rouge">help</code>
+</h3>
+
+<p>Opens the Help window with editing guidance and a link to this User Guide.</p>
+
+<p><img src="/tp/images/helpMessage.png" alt="SoCdex Help window"></p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">help</code></p>
+
+<h3 id="loading-fictional-sample-profiles-sample-load">Loading fictional sample profiles: <code class="language-plaintext highlighter-rouge">sample load</code>
+</h3>
+
+<p>Loads a fixed set of five fictional student profiles and five enrolments, so you can explore SoCdex without entering real student data.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">sample load</code></p>
+
+<p>The roster must be empty and writable. The command accepts extra spaces or tabs around and between <code class="language-plaintext highlighter-rouge">sample</code> and <code class="language-plaintext highlighter-rouge">load</code>, but it does not accept any parameters. The command is lowercase and must be on one line.</p>
+
+<p>The fixture contains these fictional profiles:</p>
+
+<ul>
+  <li>Alex Tan, <code class="language-plaintext highlighter-rouge">e9000001@u.nus.edu</code>, with Telegram and GitHub contacts, and two enrolments.</li>
+  <li>Alex Tan, <code class="language-plaintext highlighter-rouge">e9000002@u.nus.edu</code>, with a GitHub contact and one enrolment.</li>
+  <li>Mei Lim, <code class="language-plaintext highlighter-rouge">e9000003@u.nus.edu</code>, with a Telegram contact and one enrolment.</li>
+  <li>Nur Aisyah, <code class="language-plaintext highlighter-rouge">e9000005@u.nus.edu</code>, with no optional contacts or enrolments.</li>
+  <li>Ravi Kumar, <code class="language-plaintext highlighter-rouge">e9000004@u.nus.edu</code>, with Telegram and GitHub contacts, and one enrolment.</li>
+</ul>
+
+<p>Every loaded profile shows the <code class="language-plaintext highlighter-rouge">Fictional sample</code> label. Missing contacts show <code class="language-plaintext highlighter-rouge">Not provided</code>. Missing section and team values are stored as absent and are displayed as <code class="language-plaintext highlighter-rouge">Not assigned</code>. Display labels are not stored as data. The five profiles appear in name order, with email used to order equal names. No profile is selected automatically, and the profile panel says <code class="language-plaintext highlighter-rouge">Select a student to view their profile.</code> Use <code class="language-plaintext highlighter-rouge">view EMAIL</code> to open one profile. The fixture is saved and returns after restart.</p>
+
+<p>A successful command shows <code class="language-plaintext highlighter-rouge">Loaded 5 fictional student profiles and 5 enrolments. You can explore SoCdex without using real student data.</code></p>
+
+<p>If the roster is not empty, SoCdex shows <code class="language-plaintext highlighter-rouge">Sample data can only be loaded into an empty roster. Existing data was not changed.</code> It does not add, merge, or replace any profile. If the fixed fixture is invalid, SoCdex shows <code class="language-plaintext highlighter-rouge">Sample data is invalid. No data was changed.</code> If saving fails, it shows <code class="language-plaintext highlighter-rouge">Sample data could not be saved. No data was changed.</code> These failures keep the previous roster and saved file unchanged. A read-only recovery session rejects the command with the existing recovery message.</p>
+
+<p>SoCdex does not load samples at startup.</p>
+
+<h3 id="removing-fictional-sample-profiles-sample-clear">Removing fictional sample profiles: <code class="language-plaintext highlighter-rouge">sample clear</code>
+</h3>
+
+<p>Removes every profile that is classified as fictional sample data. It also removes every enrolment owned by those profiles.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">sample clear</code></p>
+
+<p>The command accepts extra spaces or tabs around and between <code class="language-plaintext highlighter-rouge">sample</code> and <code class="language-plaintext highlighter-rouge">clear</code>. It does not accept parameters, selectors, or other text. The command is lowercase and must be on one line. For example, <code class="language-plaintext highlighter-rouge">sample clear 1</code> is rejected with <code class="language-plaintext highlighter-rouge">Sample clear does not accept parameters. Usage: sample clear</code>.</p>
+
+<p>SoCdex uses the stored fictional-sample classification. It does not guess from a student’s name, email, contacts, tags, remark, or enrolments. An edited or hidden sample profile is still removed. A real profile is kept even if its details resemble the fixed fixture.</p>
+
+<p>For example, suppose the roster contains the five loaded sample profiles and a real student also named Alex Tan. <code class="language-plaintext highlighter-rouge">sample clear</code> removes the five classified samples and keeps the real Alex Tan. A successful command reports the actual totals, such as <code class="language-plaintext highlighter-rouge">Removed 5 fictional sample profiles and 5 enrolments. Your non-sample records were not changed.</code> The remaining roster is shown in name-and-email order. A selected real profile stays selected. A selected sample profile is cleared because it no longer exists.</p>
+
+<p>If no students remain, SoCdex clears the selection and shows <code class="language-plaintext highlighter-rouge">No students in the roster. Add a student or load fictional samples.</code> If there are no sample profiles, the command succeeds without saving and shows <code class="language-plaintext highlighter-rouge">No fictional sample profiles were found.</code> The current results and selection do not change. Running the command again therefore cannot remove a real profile.</p>
+
+<p>If saving fails, SoCdex shows <code class="language-plaintext highlighter-rouge">Sample profiles could not be removed. No data was changed.</code> It restores all profiles, enrolments, results, and the selected profile. A read-only recovery session blocks the command.</p>
+
+<p>The command does not ask for confirmation and it is not selective. The standalone <code class="language-plaintext highlighter-rouge">clear</code> command is unavailable because deleting the whole roster would bypass the confirmation required for real profiles.</p>
+
+<h3 id="adding-a-student-student-add">Adding a student: <code class="language-plaintext highlighter-rouge">student add</code>
+</h3>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">student add /name NAME /email EMAIL [/telegram HANDLE] [/github USERNAME]</code></p>
+
+<p>Only name and email are required. The new profile is non-sample and has no enrolments. A successful command shows <code class="language-plaintext highlighter-rouge">Added student: NAME.</code>, displays the full roster sorted by name (ignoring case) then email, and selects the new student.</p>
+
+<ul>
+  <li>Names may contain 1 to 100 Unicode characters, including accented and non-Latin names. Surrounding spaces/tabs are removed and internal runs become one space. Names must contain a visible character and cannot contain a slash, line break or control character. Two students may have the same name.</li>
+  <li>Emails have a local part of 1 to 64 ASCII letters, digits, dots, underscores, plus signs or hyphens followed by exactly <code class="language-plaintext highlighter-rouge">@u.nus.edu</code>. The local part must start and end with a letter or digit and cannot contain consecutive dots or spaces. Input is lowercased and surrounding spaces/tabs are removed. Dots and plus suffixes remain significant: <code class="language-plaintext highlighter-rouge">alex+one@u.nus.edu</code> and <code class="language-plaintext highlighter-rouge">alex+two@u.nus.edu</code> are different identities.</li>
+  <li>Telegram handles contain 5 to 32 ASCII letters, digits or underscores and start with a letter. One leading <code class="language-plaintext highlighter-rouge">@</code> is accepted and removed. Letter case is preserved.</li>
+  <li>GitHub usernames contain 1 to 39 ASCII letters, digits or hyphens. They start and end with a letter or digit and cannot contain consecutive hyphens. A leading <code class="language-plaintext highlighter-rouge">@</code>, underscore or URL is not accepted. Letter case is preserved.</li>
+  <li>Omit an unknown contact entirely. A supplied empty contact is an error. <code class="language-plaintext highlighter-rouge">Not provided</code> is displayed for absent contacts and is never stored as a placeholder.</li>
+  <li>Syntax checks do not verify that any institutional, Telegram or GitHub account exists. No external service is contacted.</li>
+</ul>
+
+<p>Examples using fictional students:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">student add /name José Tan /email E9000001@U.NUS.EDU</code> stores the email as <code class="language-plaintext highlighter-rouge">e9000001@u.nus.edu</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">student add /email e9000002@u.nus.edu /name 王小明 /telegram @Alex_Tan /github alex-tan</code> accepts mixed prefix order and stores Telegram as <code class="language-plaintext highlighter-rouge">Alex_Tan</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">student add /name José Tan /email e9000003@u.nus.edu</code> creates a second student with the same name and a different email.</li>
+</ul>
+
+<p>If the canonical email already exists, the command shows <code class="language-plaintext highlighter-rouge">A student with this NUS email already exists. Use view EMAIL to inspect the existing profile.</code>
+with the existing student’s canonical email in place of <code class="language-plaintext highlighter-rouge">EMAIL</code> and reveals/selects that existing student in the full sorted roster. It does not overwrite or save any data. This deliberate reveal is the exception to preserving the previous selection on rejection. Use <code class="language-plaintext highlighter-rouge">view EMAIL</code> to reopen that profile later.</p>
+
+<p>A save failure shows <code class="language-plaintext highlighter-rouge">The student could not be saved. No data was changed.</code> and restores the previous roster, results and selection. Correct the storage problem and retry. If the new display cannot be prepared, the command shows <code class="language-plaintext highlighter-rouge">Student could not be displayed. No data was changed. Try again.</code> and does not save.</p>
+
+<p>The inherited <code class="language-plaintext highlighter-rouge">add n/...</code> command is retired. Phone and address are no longer student fields.</p>
+
+<h3 id="adding-a-module-semester-enrolment-enrol">Adding a module-semester enrolment: <code class="language-plaintext highlighter-rouge">enrol</code>
+</h3>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">enrol /email EMAIL /module MODULE /semester SEMESTER [/section SECTION] [/team TEAM]</code></p>
+
+<p>Create the student first with <code class="language-plaintext highlighter-rouge">student add</code>. The normalised NUS email selects the exact owner from the complete roster, including students hidden by a search. Prefixes may appear in any order, once each. Unknown or repeated prefixes, text before the first prefix and supplied empty values reject the whole command. The slash inside <code class="language-plaintext highlighter-rouge">AY26/27</code> is part of the semester value.</p>
+
+<ul>
+  <li>Module codes have 2 to 4 ASCII letters, four digits and up to 3 final letters; input is trimmed and stored uppercase.</li>
+  <li>Semesters use <code class="language-plaintext highlighter-rouge">AYyy/yy S1</code> or <code class="language-plaintext highlighter-rouge">AYyy/yy S2</code>, ignoring case and normalising spaces/tabs. Years must be consecutive within 2000–2099. Special terms are unsupported.</li>
+  <li>Optional section and team labels have 1 to 30 ASCII letters, digits, spaces or hyphens after spaces/tabs are normalised, and need at least one letter or digit. Case is preserved. Omit a prefix for an unknown affiliation; do not supply a blank value or store <code class="language-plaintext highlighter-rouge">Not assigned</code> as a placeholder.</li>
+</ul>
+
+<p>Examples using an existing fictional student:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">enrol /email e9000005@u.nus.edu /module CS2103T /semester AY26/27 S1</code> adds an unassigned context.</li>
+  <li>Alternatively, <code class="language-plaintext highlighter-rouge">enrol /email E9000005@U.NUS.EDU /module cs2103t /semester ay26/27 s1 /section T12 /team SEED</code> adds the same context with affiliations. Run either example, not both: the second is a duplicate after the first succeeds.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">enrol /semester AY26/27 S2 /module CS2103T /email e9000005@u.nus.edu</code> adds a separate context for the next semester.</li>
+</ul>
+
+<p>Success shows <code class="language-plaintext highlighter-rouge">Added enrolment for NAME: MODULE, SEMESTER.</code> followed by <code class="language-plaintext highlighter-rouge">Module:</code>, <code class="language-plaintext highlighter-rouge">Semester:</code>, <code class="language-plaintext highlighter-rouge">Section:</code> and <code class="language-plaintext highlighter-rouge">Team:</code> lines for the saved context. Missing affiliations display <code class="language-plaintext highlighter-rouge">Not assigned</code>. The change is saved before success is reported; the active search is cleared and the owner is selected in the full roster sorted by name then email. All contacts, sample classification, earlier enrolments and other students are preserved. The result cards and profile panel show all saved enrolments, including their section and team.</p>
+
+<p>A duplicate module-semester key for the same student is rejected even if section or team differs. The specified message says <code class="language-plaintext highlighter-rouge">This student already has an enrolment for MODULE, SEMESTER. Use edit-enrol to change its section or team.</code> Use <code class="language-plaintext highlighter-rouge">edit-enrol</code> to update those affiliations. Check the context before retrying; <code class="language-plaintext highlighter-rouge">enrol</code> never overwrites existing affiliations. Different students may share the same context.</p>
+
+<p>A missing owner shows <code class="language-plaintext highlighter-rouge">No student found with NUS email: EMAIL. Create the student profile before adding an enrolment.</code> Invalid values show their field rule. Syntax errors include usage help and report structural errors from left to right, then check values in email/module/semester/section/team order. Rejections leave data, results and selection unchanged.</p>
+
+<p>A save failure shows <code class="language-plaintext highlighter-rouge">The enrollment could not be saved. No data was changed.</code> and restores the previous roster, results and selection. Correct the storage problem and retry. A display preparation failure shows <code class="language-plaintext highlighter-rouge">Student could not be displayed. No data was changed. Try again.</code> and does not save. Read-only recovery sessions reject enrolment changes with the existing recovery guidance.</p>
+
+<h3 id="editing-an-enrolments-section-or-team-edit-enrol">Editing an enrolment’s section or team: <code class="language-plaintext highlighter-rouge">edit-enrol</code>
+</h3>
+
+<p>Changes affiliations on one existing enrolment. The owner email, module and semester are selectors: this command
+cannot change them, move an enrolment to another student, create a missing enrolment or remove an enrolment.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">edit-enrol /email EMAIL /module MODULE /semester SEMESTER [/section SECTION|clear] [/team TEAM|clear]</code></p>
+
+<ul>
+  <li>Supply all three selectors and at least one of <code class="language-plaintext highlighter-rouge">/section</code> or <code class="language-plaintext highlighter-rouge">/team</code>. Prefixes may appear in any order, once each.</li>
+  <li>Email is canonicalised to lowercase, module to uppercase, and semester to <code class="language-plaintext highlighter-rouge">AYyy/yy S1</code> or <code class="language-plaintext highlighter-rouge">AYyy/yy S2</code>. The
+academic-year slash is part of the value. For example, <code class="language-plaintext highlighter-rouge">cs2103t</code> and <code class="language-plaintext highlighter-rouge">ay26/27 s1</code> select <code class="language-plaintext highlighter-rouge">CS2103T, AY26/27 S1</code>.</li>
+  <li>Section/team labels accept 1–30 ASCII letters, digits, spaces or hyphens after trimming and collapsing spaces/tabs;
+each label must include a letter or digit. Case is preserved. A supplied empty value is an error.</li>
+  <li>Omit a field to preserve it. The exact lowercase <code class="language-plaintext highlighter-rouge">clear</code> removes only that assignment; <code class="language-plaintext highlighter-rouge">Clear</code> stores a literal
+label. Missing affiliations display <code class="language-plaintext highlighter-rouge">Not assigned</code>.</li>
+  <li>Success shows <code class="language-plaintext highlighter-rouge">Updated enrolment for NAME: MODULE, SEMESTER.</code>, clears the search filter and selects the owner
+in the full sorted roster. Other students, enrolments, contacts and fictional-sample classification are preserved.</li>
+  <li>An identical normalised value, or clearing an already absent field, shows <code class="language-plaintext highlighter-rouge">No values changed.</code> and reveals the
+owner without rewriting the roster. A case-only section/team change is saved.</li>
+</ul>
+
+<p>Examples after <code class="language-plaintext highlighter-rouge">sample load</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">edit-enrol /email e9000001@u.nus.edu /module CS2103T /semester AY26/27 S1 /section T14 /team SEED-2</code></li>
+  <li>
+<code class="language-plaintext highlighter-rouge">edit-enrol /email e9000001@u.nus.edu /module CS2103T /semester AY26/27 S1 /team clear</code> preserves the section.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">edit-enrol /email e9000001@u.nus.edu /module CS2103T /semester AY26/27 S1 /team Clear</code> stores the label <code class="language-plaintext highlighter-rouge">Clear</code>.</li>
+</ul>
+
+<p>Errors preserve the previous roster, displayed results and selection:</p>
+
+<ul>
+  <li>No editable field: <code class="language-plaintext highlighter-rouge">Provide at least one field to update.</code>
+</li>
+  <li>Unknown owner: <code class="language-plaintext highlighter-rouge">No student found with NUS email: EMAIL.</code>
+</li>
+  <li>Unknown context: <code class="language-plaintext highlighter-rouge">No matching enrolment found for EMAIL, MODULE, SEMESTER. Use enrol to add it first.</code>
+</li>
+  <li>Prefix errors identify the missing, empty, repeated or unknown parameter and append this command’s usage.
+Structural errors are checked left to right; values are checked in email, module, semester, section, team order.</li>
+  <li>An invalid field rejects the whole request, even if another field is valid or unchanged.</li>
+  <li>Save or display failure: <code class="language-plaintext highlighter-rouge">The record could not be updated. No data was changed.</code> Correct the problem and retry.</li>
+  <li>Read-only recovery rejects this command, including no-ops. Restore a valid file and restart first.</li>
+</ul>
+
+<h3 id="listing-the-complete-roster-list">Listing the complete roster: <code class="language-plaintext highlighter-rouge">list</code>
+</h3>
+
+<p>Shows the complete roster, including students hidden by an earlier search, sorted by name (ignoring case) then email.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">list</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">list</code> does not change or save roster data. If a profile is selected and remains in the roster, it stays selected.</p>
+
+<h3 id="editing-a-students-profile-edit">Editing a student’s profile: <code class="language-plaintext highlighter-rouge">edit</code>
+</h3>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">edit /email EMAIL [/new-email NEW_EMAIL] [/name NAME] [/telegram HANDLE|clear] [/github USERNAME|clear]</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">/email</code> is the student’s current email. It selects the student across the complete roster, even when a search hides that student. Supply at least one of <code class="language-plaintext highlighter-rouge">/new-email</code>, <code class="language-plaintext highlighter-rouge">/name</code>, <code class="language-plaintext highlighter-rouge">/telegram</code> or <code class="language-plaintext highlighter-rouge">/github</code>. Every field you omit keeps its stored value. <code class="language-plaintext highlighter-rouge">edit</code> never changes enrolments, sample status, tags or remark.</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">/new-email</code> replaces the email using the <code class="language-plaintext highlighter-rouge">student add</code> email rules, and is stored in lowercase. It must not belong to another student. The student’s own current email, in any letter case, is not a change. After a successful change, the old email no longer finds the student and is not kept as an alias, so use the new email in later commands. An invalid replacement is reported as <code class="language-plaintext highlighter-rouge">New email: </code> followed by the email rule.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">/name</code> replaces the name using the <code class="language-plaintext highlighter-rouge">student add</code> name rules: surrounding spaces/tabs are removed, each internal run becomes one space, and 1 to 100 Unicode characters remain. The name cannot be removed; <code class="language-plaintext highlighter-rouge">clear</code> is ordinary name text here. Another student may have the same name.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">/telegram</code> and <code class="language-plaintext highlighter-rouge">/github</code> use the <code class="language-plaintext highlighter-rouge">student add</code> contact rules. Only the exact lowercase token <code class="language-plaintext highlighter-rouge">clear</code> removes a contact. <code class="language-plaintext highlighter-rouge">/telegram @clear</code> stores the handle <code class="language-plaintext highlighter-rouge">clear</code>, and <code class="language-plaintext highlighter-rouge">Clear</code> stores a value for either contact. An empty supplied value is an error.</li>
+</ul>
+
+<p>Examples using the fictional sample students:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">edit /email e9000001@u.nus.edu /telegram @Alex_New</code> updates Telegram and preserves everything else.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">edit /email e9000001@u.nus.edu /new-email e9000101@u.nus.edu /github clear</code> changes the email and removes GitHub in one command. Later commands for this student use <code class="language-plaintext highlighter-rouge">e9000101@u.nus.edu</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">edit /email e9000003@u.nus.edu /name Mei Ling Lim</code> renames the student; <code class="language-plaintext highlighter-rouge">/name mei ling LIM</code> afterwards is a case-only change and is saved.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">edit /email e9000004@u.nus.edu /telegram @clear /github Clear</code> stores the literal values <code class="language-plaintext highlighter-rouge">clear</code> and <code class="language-plaintext highlighter-rouge">Clear</code>. In <code class="language-plaintext highlighter-rouge">student add</code>, <code class="language-plaintext highlighter-rouge">clear</code> is ordinary text; clearing applies only to <code class="language-plaintext highlighter-rouge">edit</code>.</li>
+</ul>
+
+<p>Success shows <code class="language-plaintext highlighter-rouge">Updated student: NAME.</code> with the resulting name, clears the search filter, displays the full roster sorted by name (ignoring case) then email, and selects the updated student. If every supplied value equals the stored value after normalisation, for example the same name with extra spaces, the current email in uppercase, or clearing a contact that is already absent, the command shows <code class="language-plaintext highlighter-rouge">No values changed.</code>, still reveals and selects the student, and does not rewrite the data file. A case-only change to a name, Telegram handle or GitHub username is a real change and is saved. A case-only email change is not, because emails are stored in lowercase.</p>
+
+<p>SoCdex checks the command structure first, then the values in the order email, new email, name, Telegram, GitHub, then whether the student exists, and then whether the new email is taken. If any part fails, nothing changes. For example, a valid new name is not saved when the new email belongs to another student.</p>
+
+<ul>
+  <li>A missing target shows <code class="language-plaintext highlighter-rouge">No student found with NUS email: EMAIL.</code> A command without an editable field shows <code class="language-plaintext highlighter-rouge">Provide at least one field to update.</code>
+</li>
+  <li>A new email that belongs to another student shows <code class="language-plaintext highlighter-rouge">A student with the new NUS email already exists.</code> Unlike <code class="language-plaintext highlighter-rouge">student add</code>, this does not reveal the other student.</li>
+  <li>Invalid input preserves the previous data, results and selection.</li>
+  <li>A save failure shows <code class="language-plaintext highlighter-rouge">The record could not be updated. No data was changed.</code> and restores the prior state, including the old email. Presentation failure uses the same no-change display message as creation and does not save.</li>
+  <li>Read-only recovery rejects this command, including no-ops.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">edit</code> does not change enrolments; use <code class="language-plaintext highlighter-rouge">edit-enrol</code> for sections and teams. Index-based <code class="language-plaintext highlighter-rouge">edit</code> is not supported.</p>
+
+<h3 id="finding-students-by-an-identifier-find">Finding students by an identifier: <code class="language-plaintext highlighter-rouge">find</code>
+</h3>
+
+<p>Search the complete roster using a name, NUS email, Telegram handle, GitHub username, or part of any identifier.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">find QUERY</code></p>
+
+<ul>
+  <li>Enter one literal query of 1 to 100 Unicode characters. <code class="language-plaintext highlighter-rouge">find Alex Tan</code> searches for the phrase <code class="language-plaintext highlighter-rouge">Alex Tan</code>; it does not match <code class="language-plaintext highlighter-rouge">Alex Lim</code> or <code class="language-plaintext highlighter-rouge">Mei Tan</code>.</li>
+  <li>Matching ignores letter case and checks the whole query as a contiguous substring in any of the four fields. Accents remain significant, and punctuation such as <code class="language-plaintext highlighter-rouge">*</code> is literal; wildcards and regular expressions are not supported.</li>
+  <li>Surrounding spaces and tabs are ignored. Internal tabs become spaces, and repeated internal spaces remain significant. For example, <code class="language-plaintext highlighter-rouge">find Alex  Tan</code> (two spaces) does not match <code class="language-plaintext highlighter-rouge">Alex Tan</code> (one space).</li>
+  <li>For Telegram only, one leading <code class="language-plaintext highlighter-rouge">@</code> is removed from the query. <code class="language-plaintext highlighter-rouge">find @</code> has no Telegram match but still matches email addresses. Names, emails and GitHub usernames use the original query, so <code class="language-plaintext highlighter-rouge">find @socdex-demo-ravi</code> does not match GitHub username <code class="language-plaintext highlighter-rouge">socdex-demo-ravi</code>.</li>
+  <li>Absent contacts do not match the display label <code class="language-plaintext highlighter-rouge">Not provided</code>. Enrolment fields and the <code class="language-plaintext highlighter-rouge">Fictional sample</code> label are not searched.</li>
+  <li>Every search starts from the complete roster, including students hidden by a previous search.</li>
+  <li>Results appear in name order, ignoring case, with email used to break ties. Each matching profile appears once and shows its name, email, and currently supported fields.</li>
+  <li>A single match is selected automatically. Zero or multiple matches clear the selection.</li>
+  <li>A blank query shows <code class="language-plaintext highlighter-rouge">Enter a name, NUS email, Telegram handle, or GitHub username to search.</code> with usage help. More than 100 characters, a line break, or an unsupported control character is also rejected. The previous results and selection remain available; correct the command and retry.</li>
+  <li>Searching does not change or save roster data.</li>
+  <li>If results cannot be displayed, the app shows <code class="language-plaintext highlighter-rouge">Search results could not be displayed. Try the search again.</code> and retains the previous results and selected profile. Retry the search.</li>
+</ul>
+
+<p>Examples using fictional records:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">find Alex Tan</code> finds every profile with an identifier containing <code class="language-plaintext highlighter-rouge">Alex Tan</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">find E9000001@U.NUS.EDU</code> finds a profile with the email <code class="language-plaintext highlighter-rouge">e9000001@u.nus.edu</code>, even after an earlier search returned no results.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">find @u.nus.edu</code> lists matching student emails.</li>
+  <li>After <code class="language-plaintext highlighter-rouge">sample load</code>, <code class="language-plaintext highlighter-rouge">find @socdex_demo_mei</code> selects Mei Lim through Telegram, and <code class="language-plaintext highlighter-rouge">find socdex-demo-ravi</code> selects Ravi Kumar through GitHub. Shared handles return every matching student once, even when another field also matches.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">find *</code> searches for a literal asterisk. If no profile matches, the app displays <code class="language-plaintext highlighter-rouge">No students found for "*". Check the spelling or search with another identifier.</code>
+</li>
+</ul>
+
+<p>Every result card shows the student’s contacts and enrolments. The selected student’s complete profile appears in the profile panel; use <code class="language-plaintext highlighter-rouge">view EMAIL</code> to open one specific profile.</p>
+
+<p>If the student list cannot be refreshed after a command, the app blocks further command execution until it can show the current list. Submit again to refresh it, then check the displayed indexes before re-entering your intended command. The earlier command may already have changed data; refreshing the list does not repeat it.</p>
+
+<h3 id="viewing-a-student-profile-view">Viewing a student profile: <code class="language-plaintext highlighter-rouge">view</code>
+</h3>
+
+<p>Open the complete profile of one student, identified by NUS email.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">view EMAIL</code></p>
+
+<ul>
+  <li>The email is matched against the complete roster, including students hidden by a previous search. Letter case and surrounding spaces or tabs are ignored, so <code class="language-plaintext highlighter-rouge">view E9000001@U.NUS.EDU</code> opens <code class="language-plaintext highlighter-rouge">e9000001@u.nus.edu</code>.</li>
+  <li>Success shows <code class="language-plaintext highlighter-rouge">Viewing student: NAME.</code>, selects that student, scrolls to them, and shows their complete profile in the profile panel. If the student is already in the displayed results, those results are kept. Otherwise the full roster is shown, sorted by name then email.</li>
+  <li>The profile shows the name, <code class="language-plaintext highlighter-rouge">Fictional sample</code> for sample records, NUS email, Telegram, GitHub, and every enrolment ordered by academic year, then semester, then module code. Each enrolment is shown as <code class="language-plaintext highlighter-rouge">CS2103T | AY26/27 S1 | Section: T12 | Team: SEED</code>. An absent section or team shows <code class="language-plaintext highlighter-rouge">Not assigned</code>, an absent contact shows <code class="language-plaintext highlighter-rouge">Not provided</code>, and a student without enrolments shows <code class="language-plaintext highlighter-rouge">Enrolments: none</code>. These labels are display text only and are never stored.</li>
+  <li>Selecting a row in the student list also shows that student’s profile. With no selection, the profile panel shows <code class="language-plaintext highlighter-rouge">Select a student to view their profile.</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">view</code> does not change or save roster data, and it is available in a read-only recovery session.</li>
+</ul>
+
+<p>Error messages keep the previous results and selection:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">view</code> alone shows <code class="language-plaintext highlighter-rouge">NUS email is required. Usage: view EMAIL</code>.</li>
+  <li>More than one value, such as <code class="language-plaintext highlighter-rouge">view e9000001@u.nus.edu e9000002@u.nus.edu</code> or <code class="language-plaintext highlighter-rouge">view /email e9000001@u.nus.edu</code>, shows <code class="language-plaintext highlighter-rouge">View accepts one NUS email only. Usage: view EMAIL</code>.</li>
+  <li>A name, index, or non-NUS email shows the NUS email rules from <code class="language-plaintext highlighter-rouge">student add</code>.</li>
+  <li>An unknown email shows <code class="language-plaintext highlighter-rouge">No student found with NUS email: EMAIL.</code>
+</li>
+  <li>If the profile cannot be displayed, the app shows <code class="language-plaintext highlighter-rouge">Profile could not be displayed. Try viewing the student again.</code> Retry the command.</li>
+</ul>
+
+<p>Examples using the fictional sample profiles:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">view e9000001@u.nus.edu</code> shows the first Alex Tan with both enrolments; <code class="language-plaintext highlighter-rouge">view e9000002@u.nus.edu</code> shows the other Alex Tan.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">view e9000005@u.nus.edu</code> shows Nur Aisyah with <code class="language-plaintext highlighter-rouge">Not provided</code> contacts and <code class="language-plaintext highlighter-rouge">Enrolments: none</code>.</li>
+</ul>
+
+<h3 id="deleting-a-student-delete-and-confirm-delete">Deleting a student: <code class="language-plaintext highlighter-rouge">delete</code> and <code class="language-plaintext highlighter-rouge">confirm-delete</code>
+</h3>
+
+<p>Removes one student profile and every enrolment it owns. Deletion takes two commands: a preview, then a confirmation for the same NUS email as the next command you submit. Submit each command separately.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">delete EMAIL</code>, then <code class="language-plaintext highlighter-rouge">confirm-delete EMAIL</code></p>
+
+<p><strong>Previewing the deletion</strong></p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">delete EMAIL</code> finds the student by NUS email in the complete roster, including students hidden by a search. Letter case and surrounding spaces or tabs are ignored, so <code class="language-plaintext highlighter-rouge">delete E9000001@U.NUS.EDU</code> targets <code class="language-plaintext highlighter-rouge">e9000001@u.nus.edu</code>. Names and list indexes are not accepted: <code class="language-plaintext highlighter-rouge">delete 1</code> shows the NUS email rules from <code class="language-plaintext highlighter-rouge">student add</code>. Students with the same name are told apart by their emails.</li>
+  <li>
+    <p>A successful preview selects the student, scrolls to them and shows their complete profile with every enrolment, including when their row is above or below the currently visible rows. If the student is already in the displayed results, those results are kept. Otherwise the full roster is shown, sorted by name then email. The result area shows, for example:</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Delete this student?
+Alex Tan
+NUS email: e9000001@u.nus.edu
+Enrolments to remove: 2
+Type: confirm-delete e9000001@u.nus.edu
+Any other command will cancel this deletion.
+</code></pre></div>    </div>
+
+    <p>Scroll the result area if it does not show every line. The enrolment count is the student’s actual number of stored enrolments. A fictional sample keeps its <code class="language-plaintext highlighter-rouge">Fictional sample</code> label and still needs confirmation.</p>
+  </li>
+  <li>While the preview awaits confirmation, the status bar shows <code class="language-plaintext highlighter-rouge">Deletion pending</code>.</li>
+  <li>A preview changes no roster data and does not save. Only one deletion can be pending at a time, and it is never saved: after a restart, nothing is pending.</li>
+</ul>
+
+<p><strong>Confirming the deletion</strong></p>
+
+<ul>
+  <li>Submit <code class="language-plaintext highlighter-rouge">confirm-delete EMAIL</code> with the same NUS email as the next command after the preview. Letter case and surrounding spaces or tabs are ignored.</li>
+  <li>SoCdex removes the student and all of their enrolments, saves the roster, and only then shows <code class="language-plaintext highlighter-rouge">Deleted student: NAME. NUS email: EMAIL. Enrolments removed: N.</code> Every other student and enrolment is kept, including another student with the same name.</li>
+  <li>The full remaining roster is shown, sorted by name then email, with no student selected, even if only one student remains. The profile panel shows <code class="language-plaintext highlighter-rouge">Select a student to view their profile.</code>, or <code class="language-plaintext highlighter-rouge">No students in the roster. Add a student or load fictional samples.</code> if no students remain. <code class="language-plaintext highlighter-rouge">Deletion pending</code> disappears from the status bar.</li>
+  <li>Deletion is permanent. SoCdex has no undo command or recycle bin, so check the preview before confirming.</li>
+</ul>
+
+<p><strong>Every confirmation attempt ends the pending deletion</strong></p>
+
+<p>A confirmation attempt uses up the pending deletion, whether or not it succeeds. To try again, start with a new <code class="language-plaintext highlighter-rouge">delete EMAIL</code>.</p>
+
+<ul>
+  <li>A different valid email shows <code class="language-plaintext highlighter-rouge">Deletion was cancelled because the confirmation did not match the selected student.</code> Neither student is deleted.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">confirm-delete EMAIL</code> without a preview, or a second confirmation after a deletion, shows <code class="language-plaintext highlighter-rouge">There is no pending deletion. Use delete EMAIL first.</code>
+</li>
+  <li>If the previewed student no longer exists, SoCdex shows <code class="language-plaintext highlighter-rouge">The pending student no longer exists. No data was changed.</code>
+</li>
+  <li>A malformed confirmation, such as <code class="language-plaintext highlighter-rouge">confirm-delete</code> alone or <code class="language-plaintext highlighter-rouge">confirm-delete yes</code>, shows <code class="language-plaintext highlighter-rouge">Pending deletion cancelled.</code> with the specific input error on the next line.</li>
+</ul>
+
+<p><strong>What cancels a pending deletion</strong></p>
+
+<p>Each of the following cancels the pending deletion. The cancellation itself removes no roster data. A separately submitted <code class="language-plaintext highlighter-rouge">sample clear</code> still removes fictional sample records after cancelling the pending deletion. Submitting the retired <code class="language-plaintext highlighter-rouge">clear</code> command cancels the pending deletion but removes nothing. You need a fresh <code class="language-plaintext highlighter-rouge">delete EMAIL</code> before confirming another deletion:</p>
+
+<ul>
+  <li>Submitting any other command, whether it is valid or not, such as <code class="language-plaintext highlighter-rouge">find</code>, <code class="language-plaintext highlighter-rouge">view</code>, <code class="language-plaintext highlighter-rouge">list</code>, <code class="language-plaintext highlighter-rouge">help</code>, an unknown command or a command with an error. SoCdex shows <code class="language-plaintext highlighter-rouge">Pending deletion cancelled.</code> on its own line above that command’s own result or error. Another <code class="language-plaintext highlighter-rouge">delete EMAIL</code> cancels the earlier preview and creates a new pending deletion only if the student exists and the new preview succeeds.</li>
+  <li>Pressing Enter when the command box is empty or contains only spaces or tabs. SoCdex shows <code class="language-plaintext highlighter-rouge">Pending deletion cancelled.</code> followed by <code class="language-plaintext highlighter-rouge">Enter a command.</code>
+</li>
+  <li>Selecting a different student in the list with the mouse or keyboard. SoCdex shows <code class="language-plaintext highlighter-rouge">Pending deletion cancelled.</code> Selecting the previewed student again, or clearing the selection, keeps the deletion pending. Selecting the original student again after a cancellation does not restore it.</li>
+  <li>Submitting a command when the student list needs to be refreshed. SoCdex refreshes the list instead of running the command, and its message starts with <code class="language-plaintext highlighter-rouge">Pending deletion cancelled.</code>
+</li>
+  <li>Exiting with <code class="language-plaintext highlighter-rouge">bye</code> or <code class="language-plaintext highlighter-rouge">exit</code>, closing the window, or choosing <strong>File &gt; Exit</strong>. The pending deletion is discarded, never confirmed.</li>
+</ul>
+
+<p>Typing in the command box without pressing Enter, scrolling, resizing the window, and opening help with <code class="language-plaintext highlighter-rouge">F1</code> or <strong>Help &gt; Help</strong> do not cancel a pending deletion.</p>
+
+<p><strong>Other errors</strong></p>
+
+<p>These messages leave the roster unchanged:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">delete</code> alone shows <code class="language-plaintext highlighter-rouge">NUS email is required. Usage: delete EMAIL</code>. <code class="language-plaintext highlighter-rouge">confirm-delete</code> alone shows <code class="language-plaintext highlighter-rouge">NUS email is required. Usage: confirm-delete EMAIL</code>.</li>
+  <li>More than one value, such as <code class="language-plaintext highlighter-rouge">delete e9000001@u.nus.edu e9000002@u.nus.edu</code>, shows <code class="language-plaintext highlighter-rouge">Delete accepts one NUS email only. Usage: delete EMAIL</code>. For a confirmation, the message is <code class="language-plaintext highlighter-rouge">Confirm-delete accepts one NUS email only. Usage: confirm-delete EMAIL</code>.</li>
+  <li>A name, index or non-NUS email shows the NUS email rules from <code class="language-plaintext highlighter-rouge">student add</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">delete EMAIL</code> with an email that belongs to no student shows <code class="language-plaintext highlighter-rouge">No student found with NUS email: EMAIL.</code> A confirmation does not look the email up this way; it uses the pending-deletion and mismatch checks described above.</li>
+  <li>If the preview cannot be displayed, SoCdex shows <code class="language-plaintext highlighter-rouge">Student could not be displayed. No data was changed. Try again.</code> and no deletion is pending.</li>
+  <li>A read-only recovery session rejects both commands with <code class="language-plaintext highlighter-rouge">Data changes are disabled because stored data could not be loaded. Restore a valid data file and restart SoCdex.</code>
+</li>
+</ul>
+
+<p><strong>If the deletion cannot be saved</strong></p>
+
+<p>If saving the deletion fails, or the remaining roster cannot be displayed, SoCdex shows <code class="language-plaintext highlighter-rouge">The student could not be deleted. No data was changed. Use delete EMAIL to start again.</code> The student, their enrolments, the saved file, the displayed results and the selected profile are restored. The pending deletion has ended, so correct the storage problem and then start again with <code class="language-plaintext highlighter-rouge">delete EMAIL</code>.</p>
+
+<p>Examples using the fictional sample profiles, after <code class="language-plaintext highlighter-rouge">sample load</code>:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">delete e9000001@u.nus.edu</code> previews the first Alex Tan with <code class="language-plaintext highlighter-rouge">Enrolments to remove: 2</code>. Then <code class="language-plaintext highlighter-rouge">confirm-delete e9000001@u.nus.edu</code> deletes that student and both enrolments. The other Alex Tan, <code class="language-plaintext highlighter-rouge">e9000002@u.nus.edu</code>, is kept.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">delete e9000003@u.nus.edu</code>, then <code class="language-plaintext highlighter-rouge">find Alex</code>, then <code class="language-plaintext highlighter-rouge">confirm-delete e9000003@u.nus.edu</code>: the search result starts with <code class="language-plaintext highlighter-rouge">Pending deletion cancelled.</code>, and the confirmation shows <code class="language-plaintext highlighter-rouge">There is no pending deletion. Use delete EMAIL first.</code> Mei Lim is kept.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">delete e9000003@u.nus.edu</code>, then <code class="language-plaintext highlighter-rouge">confirm-delete e9000004@u.nus.edu</code>: the mismatch message is shown, and both Mei Lim and Ravi Kumar are kept.</li>
+</ul>
+
+<p>To remove every fictional sample at once, use <code class="language-plaintext highlighter-rouge">sample clear</code>. SoCdex does not provide an operation that deletes the whole roster.</p>
+
+<h3 id="retired-whole-roster-command-clear">Retired whole-roster command: <code class="language-plaintext highlighter-rouge">clear</code>
+</h3>
+
+<p>The inherited whole-roster clear operation is unavailable because it would bypass the confirmation required for deleting real student profiles.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">clear</code></p>
+
+<p>Submitting this command shows <code class="language-plaintext highlighter-rouge">The clear command is unavailable because it would remove the entire roster. Use delete EMAIL to remove one student profile or sample clear to remove fictional sample profiles.</code> The roster, displayed results, selection and saved file remain unchanged.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">delete EMAIL</code> followed by the matching <code class="language-plaintext highlighter-rouge">confirm-delete EMAIL</code> to remove one real profile safely. Use <code class="language-plaintext highlighter-rouge">sample clear</code> to remove all records classified as fictional samples.</p>
+
+<h3 id="exiting-the-program-bye">Exiting the program: <code class="language-plaintext highlighter-rouge">bye</code>
+</h3>
+
+<p>Closes SoCdex.</p>
+
+<p>Format: <code class="language-plaintext highlighter-rouge">bye</code></p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">exit</code> is an alias that behaves the same way.</li>
+  <li>Spaces or tabs around the command are allowed, but parameters are not. For example, <code class="language-plaintext highlighter-rouge">bye now</code> or <code class="language-plaintext highlighter-rouge">exit 3</code> shows <code class="language-plaintext highlighter-rouge">Bye does not accept parameters. Usage: bye</code>, and SoCdex stays open.</li>
+  <li>Exiting discards any pending deletion without deleting anything. Closing the window or choosing <strong>File &gt; Exit</strong> has the same effect.</li>
+  <li>Exiting does not save the roster; each roster change is already saved when its command succeeds. The window size and position are kept for the next launch. In a read-only recovery session, exiting leaves the preserved data file unchanged.</li>
+</ul>
+
+<h3 id="saving-the-data">Saving the data</h3>
+
+<p>SoCdex saves roster changes before reporting success. You do not need to save manually. Read-only commands (<code class="language-plaintext highlighter-rouge">find</code>, <code class="language-plaintext highlighter-rouge">view</code>, <code class="language-plaintext highlighter-rouge">list</code>, <code class="language-plaintext highlighter-rouge">help</code>, and <code class="language-plaintext highlighter-rouge">bye</code> or <code class="language-plaintext highlighter-rouge">exit</code>), deletion previews, rejected commands, and changes that leave all stored values unchanged do not rewrite the roster file.</p>
+
+<p>If saving fails, the app reports that no data was changed and restores the previous roster, result list, and selected profile. Correct the file or folder permissions, or free disk space, then retry. A failed first save does not create a partial roster file. If the filesystem cannot safely replace the file, saving fails instead of overwriting it in place; use a local filesystem that supports atomic file replacement.</p>
+
+<p>This protects against detected loading and saving failures. It does not provide backups, undo, or guarantees against hardware failure or power loss. Use only one running instance for a roster and do not edit its file while the app is running.</p>
+
+<h3 id="starting-empty-or-recovering-from-a-load-failure">Starting empty or recovering from a load failure</h3>
+
+<p>When no saved roster exists, the app starts empty and explains how to add a student or load fictional samples. Use <code class="language-plaintext highlighter-rouge">student add</code> to enter your own record, or use <code class="language-plaintext highlighter-rouge">sample load</code> to explore the fixed fictional fixture. Samples do not load automatically.</p>
+
+<p>If an existing roster is unreadable or invalid, the app preserves it and opens an empty <strong>read-only recovery session</strong>. The initial message is:</p>
+
+<blockquote>
+  <p>Stored data could not be loaded. The existing file was preserved. This session is read-only. Restore a valid data file and restart SoCdex.</p>
+</blockquote>
+
+<p><strong>Storage unavailable — read-only recovery</strong> remains visible in the status bar, including after searches. An empty recovery view does not mean that the saved roster is empty. Data-changing commands are disabled for the entire session. Searching, viewing, listing, help, and exiting remain available. Closing the app does not overwrite the preserved roster.</p>
+
+<p>To recover:</p>
+
+<ol>
+  <li>Close the app and keep a separate copy of the preserved file before making repairs.</li>
+  <li>Open the newest file in <code class="language-plaintext highlighter-rouge">logs/</code>, usually <code class="language-plaintext highlighter-rouge">addressbook.log.0</code>, and find the stored-data validation message. It identifies the failed rule, such as an invalid section or email, but might not identify the exact record. Do not post a log publicly without checking it for roster information.</li>
+  <li>Restore a known-valid roster to the displayed data-file location, or correct invalid records and file permissions while the app is closed.</li>
+  <li>Restart SoCdex. Confirm that the expected records load and the status says <strong>Storage available</strong> before making changes.</li>
+</ol>
+
+<h3 id="application-folder-and-data-locations">Application folder and data locations</h3>
+
+<p>The application folder is the folder containing the running JAR. SoCdex resolves its location from the JAR itself, so launching <code class="language-plaintext highlighter-rouge">java -jar /path/to/SoCdex/addressbook.jar</code> from another terminal folder still uses the data beside that JAR.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>File or folder</th>
+      <th>Location inside the application folder</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Saved roster</td>
+      <td><code class="language-plaintext highlighter-rouge">data/addressbook.json</code></td>
+    </tr>
+    <tr>
+      <td>Window preferences</td>
+      <td><code class="language-plaintext highlighter-rouge">preferences.json</code></td>
+    </tr>
+    <tr>
+      <td>Rotating logs and logging lock files</td>
+      <td><code class="language-plaintext highlighter-rouge">logs/</code></td>
+    </tr>
+    <tr>
+      <td>Bundled JavaFX native cache</td>
+      <td><code class="language-plaintext highlighter-rouge">.javafx-cache/</code></td>
+    </tr>
+    <tr>
+      <td>Application-controlled temporary directory</td>
+      <td><code class="language-plaintext highlighter-rouge">.tmp/</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Roster saves use temporary files inside <code class="language-plaintext highlighter-rouge">data/</code> and remove them after the atomic replacement. SoCdex does not load preferences or roster files from the terminal’s working directory and does not automatically migrate older files stored there. To keep an older roster, close SoCdex, retain a backup, and manually copy the valid roster into the JAR folder’s <code class="language-plaintext highlighter-rouge">data/</code> subfolder before restarting. Copy <code class="language-plaintext highlighter-rouge">preferences.json</code> beside the JAR if you also want to keep window settings.</p>
+
+<p>Use a writable application folder. SoCdex does not fall back to another folder when a managed location is unwritable or redirected through a symbolic link. An unsafe roster location uses read-only recovery; preferences or log failures leave defaults or console logging. If the native-cache or temporary directory cannot be prepared safely, startup stops. Correct the folder or move the JAR and its data together to a writable folder. Symbolic links for managed data are unsupported; use ordinary files and directories.</p>
+
+<p>On Linux, SoCdex uses JavaFX’s software renderer by default, because the OpenGL graphics driver can keep a shader cache outside the application folder (for example under <code class="language-plaintext highlighter-rouge">~/.cache</code>). Software rendering may redraw more slowly on some computers. Windows and macOS keep JavaFX’s usual rendering. If you start SoCdex with your own <code class="language-plaintext highlighter-rouge">-Dprism.order=...</code> Java option, SoCdex keeps that choice. SoCdex does not change system or desktop settings.</p>
+
+<h3 id="stored-enrolments">Stored enrolments</h3>
+
+<p>Student records can store several module-semester enrolments, with optional tutorial sections and project teams. Use <code class="language-plaintext highlighter-rouge">enrol</code> to add a context to an existing student. Each result card and the profile panel show every stored enrolment; use <code class="language-plaintext highlighter-rouge">view EMAIL</code> to open a complete profile. Existing commands that edit a profile or its remark preserve its stored enrolments.</p>
+
+<p>An otherwise valid older profile without an <code class="language-plaintext highlighter-rouge">enrolments</code> property loads with no enrolments. When editing JSON while the app is closed, use the canonical enrolment format documented in the Developer Guide. Invalid values or duplicate module-semester keys reject the entire load. Keep a separate copy of the file before editing it. Do not store <code class="language-plaintext highlighter-rouge">Not assigned</code> as a substitute for an absent section or team; use null or omit that optional property.</p>
+
+<h3 id="stored-contacts-and-sample-classification">Stored contacts and sample classification</h3>
+
+<p><code class="language-plaintext highlighter-rouge">student add</code> creates a non-sample profile with optional contacts; <code class="language-plaintext highlighter-rouge">edit /email</code> changes only the supplied name, email and contacts. <code class="language-plaintext highlighter-rouge">sample load</code> creates the fixed classified fictional fixture only in an empty roster. <code class="language-plaintext highlighter-rouge">sample clear</code> removes records based only on that stored classification. Each saved record explicitly states whether it is fictional sample data. Existing remark and enrolment-copy operations preserve that classification and the contacts.</p>
+
+<p>Each result card and the profile panel show a <code class="language-plaintext highlighter-rouge">Telegram:</code> line and a <code class="language-plaintext highlighter-rouge">GitHub:</code> line. <code class="language-plaintext highlighter-rouge">Not provided</code> means that no value is stored; it is display text only. A fictional sample record also shows the label <code class="language-plaintext highlighter-rouge">Fictional sample</code>.</p>
+
+<h3 id="editing-the-data-file">Editing the data file</h3>
+
+<p><strong>Schema compatibility:</strong> files containing the retired <code class="language-plaintext highlighter-rouge">phone</code> or <code class="language-plaintext highlighter-rouge">address</code> properties are rejected, even when those properties are null. No data is silently dropped. Keep an external copy of the original file, close the app, and manually migrate only after retaining any phone/address information you need elsewhere. Remove the retired properties, explicitly classify each record with a boolean <code class="language-plaintext highlighter-rouge">sample</code>, and verify all fields against the rules below before restarting. The app never guesses classification or automatically migrates a file. An otherwise valid record that omits optional contacts or enrolments loads with those values absent or empty.</p>
+
+<p>Roster data is saved automatically as <code class="language-plaintext highlighter-rouge">[folder containing the running JAR]/data/addressbook.json</code>, independently of the terminal working directory. Advanced users are welcome to update data directly by editing that data file.</p>
+
+<p>Names in the data file must already have ordinary spaces and tabs normalised: no surrounding ordinary spaces or tabs, no tabs within the name, and no repeated ordinary spaces. Letter case and other permitted Unicode characters, including non-breaking spaces, are preserved. Commands normalise ordinary spaces and tabs, but the app rejects a stored name that needs this normalisation instead of correcting it.</p>
+
+<p>Every record must contain <code class="language-plaintext highlighter-rouge">"sample": false</code> or <code class="language-plaintext highlighter-rouge">"sample": true</code>, written as a JSON boolean rather than text. Use <code class="language-plaintext highlighter-rouge">false</code> for real students and <code class="language-plaintext highlighter-rouge">true</code> only for fictional sample records. The <code class="language-plaintext highlighter-rouge">"telegram"</code> and <code class="language-plaintext highlighter-rouge">"github"</code> properties are optional; omit them or write <code class="language-plaintext highlighter-rouge">null</code> when there is no value. A stored value must already be in its saved form, with no surrounding spaces or tabs. A Telegram handle has 5 to 32 letters, digits, or underscores, starts with a letter, and is stored without its leading <code class="language-plaintext highlighter-rouge">@</code> (write <code class="language-plaintext highlighter-rouge">"alex_tan"</code>, not <code class="language-plaintext highlighter-rouge">"@alex_tan"</code>). A GitHub username has 1 to 39 letters, digits, or single hyphens, and does not start or end with a hyphen. Letter case is kept as written. Never store <code class="language-plaintext highlighter-rouge">Not provided</code> as a value. A missing or non-boolean <code class="language-plaintext highlighter-rouge">sample</code>, or a contact value that is invalid or not in its saved form, rejects the entire load.</p>
+
+<div class="alert alert-warning">
+<img class="emoji" title=":exclamation:" alt=":exclamation:" src="https://github.githubassets.com/images/icons/emoji/unicode/2757.png" height="20" width="20"> <strong>Caution:</strong>
+Edit the file only while the app is closed, and keep a separate copy before editing it. If your changes make it invalid, SoCdex preserves it and opens a read-only recovery session at the next run. Restore a valid file and restart; commands and normal exit do not replace the invalid roster.<br>
+Furthermore, certain edits can cause SoCdex to behave in unexpected ways, for example if a value is outside the acceptable range. Edit the data file only if you are confident that you can update it correctly.
+</div>
+
+<hr>
+
+<h2 id="faq">FAQ</h2>
+
+<p><strong>Q</strong>: How do I transfer my data to another computer?<br>
+<strong>A</strong>: Close SoCdex on both computers. Copy <code class="language-plaintext highlighter-rouge">data/addressbook.json</code> from the folder containing the old JAR into the <code class="language-plaintext highlighter-rouge">data/</code> subfolder beside the JAR on the new computer. Replace the new file only after keeping a backup. You can also copy <code class="language-plaintext highlighter-rouge">preferences.json</code> beside the JAR if you want to keep the window size and position. Start SoCdex and confirm that the expected roster loads and the status bar shows <strong>Storage available</strong>.</p>
+
+<p><strong>Q</strong>: Why does my data file from an earlier version no longer load?<br>
+<strong>A</strong>: Every email must now be a valid NUS email (see <code class="language-plaintext highlighter-rouge">student add</code>), and no two persons can share an email. In the data file, each email must also already be in its saved form: all lowercase, with no spaces or tabs before or after it. Commands such as <code class="language-plaintext highlighter-rouge">student add</code> convert uppercase letters and remove surrounding spaces and tabs, but the app does not convert emails in the data file. A data file that contains another kind of email address (such as one ending in <code class="language-plaintext highlighter-rouge">@example.com</code>), an email that is not in its saved form (such as <code class="language-plaintext highlighter-rouge">E1234567@u.nus.edu</code>), or two persons with the same email is treated as an invalid data file. SoCdex then preserves the file and opens a read-only recovery session; see <a href="#starting-empty-or-recovering-from-a-load-failure">Starting empty or recovering from a load failure</a>. Keep a copy of the original file, then correct each email or remove the duplicate record while the app is closed, and restart SoCdex.</p>
+
+<p><strong>Q</strong>: Why does a data file saved by an earlier SoCdex build open in read-only recovery even though its emails are valid?<br>
+<strong>A</strong>: Every record must now state whether it is fictional sample data. A file saved before this change has no <code class="language-plaintext highlighter-rouge">"sample"</code> property in its records, so SoCdex preserves it and opens a read-only recovery session instead of guessing; see <a href="#starting-empty-or-recovering-from-a-load-failure">Starting empty or recovering from a load failure</a>. To use the file again, close SoCdex and keep a copy of the file. Add <code class="language-plaintext highlighter-rouge">"sample": false</code> to every record that describes a real student (use <code class="language-plaintext highlighter-rouge">"sample": true</code> only for fictional sample records), then restart SoCdex. See <a href="#editing-the-data-file">Editing the data file</a> for the format.</p>
+
+<hr>
+
+<h2 id="known-issues">Known issues</h2>
+
+<ol>
+  <li>
+<strong>When using multiple screens</strong>, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the <code class="language-plaintext highlighter-rouge">preferences.json</code> file created by the application before running the application again.</li>
+  <li>
+<strong>If you minimize the Help Window</strong> and then run the <code class="language-plaintext highlighter-rouge">help</code> command (or use the <code class="language-plaintext highlighter-rouge">Help</code> menu, or the keyboard shortcut <code class="language-plaintext highlighter-rouge">F1</code>) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.</li>
+</ol>
+
+<p>The published v1.5 JAR passed physical-keyboard acceptance on macOS 26.7.1 with Apple silicon at 2560 x 1440 and 100% scaling, and on Windows 11 at 1366 x 768 and 100% scaling. Native Linux desktop execution was not verified; WSLg checks and Ubuntu CI are supplemental only. Physical Windows testing at 1920 x 1080 and at 125% or 150% scaling was unavailable. On the tested Windows display, the last line of the six-line deletion preview requires vertical scrolling, while the confirmation command remains visible; <a href="https://github.com/AY2627S1-CS2103T-W09-2/tp/issues/188">issue #188</a> tracks the low-severity improvement for v1.6. Search response time was not measured manually during the final macOS acceptance pass. These are evidence limits, not failures of the accepted core workflows.</p>
+
+<hr>
+
+<h2 id="command-summary">Command summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Format, Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Edit enrolment</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">edit-enrol /email EMAIL /module MODULE /semester SEMESTER [/section SECTION\|clear] [/team TEAM\|clear]</code></td>
+    </tr>
+    <tr>
+      <td><strong>Enrol</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">enrol /email EMAIL /module MODULE /semester SEMESTER [/section SECTION] [/team TEAM]</code></td>
+    </tr>
+    <tr>
+      <td><strong>Student add</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">student add /name NAME /email EMAIL [/telegram HANDLE] [/github USERNAME]</code></td>
+    </tr>
+    <tr>
+      <td><strong>Retired whole-roster clear</strong></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">clear</code> (always rejected; use <code class="language-plaintext highlighter-rouge">delete EMAIL</code> or <code class="language-plaintext highlighter-rouge">sample clear</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Delete</strong></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">delete EMAIL</code>, then <code class="language-plaintext highlighter-rouge">confirm-delete EMAIL</code> as the next command<br> e.g., <code class="language-plaintext highlighter-rouge">delete e9000001@u.nus.edu</code>, then <code class="language-plaintext highlighter-rouge">confirm-delete e9000001@u.nus.edu</code>
+</td>
+    </tr>
+    <tr>
+      <td><strong>Exit</strong></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">bye</code> (alias: <code class="language-plaintext highlighter-rouge">exit</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Edit</strong></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">edit /email EMAIL [/new-email NEW_EMAIL] [/name NAME] [/telegram HANDLE\|clear] [/github USERNAME\|clear]</code><br> e.g., <code class="language-plaintext highlighter-rouge">edit /email e9000001@u.nus.edu /new-email e9000101@u.nus.edu /github clear</code>
+</td>
+    </tr>
+    <tr>
+      <td><strong>Find</strong></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">find QUERY</code><br> e.g., <code class="language-plaintext highlighter-rouge">find Alex Tan</code>
+</td>
+    </tr>
+    <tr>
+      <td><strong>List</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">list</code></td>
+    </tr>
+    <tr>
+      <td><strong>Help</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">help</code></td>
+    </tr>
+    <tr>
+      <td><strong>Sample load</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">sample load</code></td>
+    </tr>
+    <tr>
+      <td><strong>Sample clear</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">sample clear</code></td>
+    </tr>
+    <tr>
+      <td><strong>View</strong></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">view EMAIL</code><br> e.g., <code class="language-plaintext highlighter-rouge">view e9000001@u.nus.edu</code>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+  </body>
+
+</html>
