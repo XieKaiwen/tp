@@ -1,0 +1,9 @@
+# Exact v1.6 candidate supplemental check — Kaiwen / Codex
+
+3 November 2026. Downloaded the already-created unpublished v1.6 draft candidate; no rebuild or asset replacement. Source dd302c006773a8453ffb65627d263b164758979d. JAR 12,924,915 bytes; SHA-256 a470d4ed9778571074fef56bf9290a306da6209f43df6e5c704634c00913d205. SHA256SUMS passed; copied `[CS2103T-W09-2][SoCdex].jar` and cmp proved identical. Archive: 6,964 entries, Main-Class seedu.address.Main, no logs or user data. Supplemental to Jingchun's original build/handoff, not a reattribution of that work.
+
+Plain Oracle Java 25.0.4.1+1-LTS-5 on macOS 26.5.1 aarch64, packaged JavaFX; operator Codex. Reused the retained Alpha139Agent (source included) to submit commands through the real production command field. `explore` and `explore-restart` launched via `java -Dalpha.home=... -javaagent:../alpha139-agent.jar=PHASE -jar addressbook.jar` as separate JVMs, from a disposable fictional-data folder. Both phases passed and normal ExitCommand/MainApp.stop completed. Explore transcript records 63 command submissions and 52 unchanged-file checks; restart transcript records its own commands separately.
+
+Covers invalid identity/contact inputs and atomic rejection, valid boundaries, contact clearing/literal values, no-op edit, changing identity and retiring the old email, deletion cancellation/mismatch/confirmation, and persisted survivor reload. These test Hoang-owned identity/contact/deletion paths independently of his implementation; Kaiwen's enrolment implementation is not being independently certified by its own author.
+
+Not physical keyboard, OS-automated input, Windows, native Linux, scaling or final #203 sign-off. Focus-owner entries are observations, not a claim of successful physical focus testing. Screenshots are programmatic snapshots. Original public v1.5 tag/JAR unchanged. The accepted exact-JAR checksum was verified again after testing.
